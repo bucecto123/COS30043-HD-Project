@@ -14,7 +14,7 @@
 | Layer | Technology |
 |-------|------------|
 | Frontend | Vue.js 3 (Composition API) |
-| Styling | Bootstrap 5 |
+| Styling | **Vuetify 3** (Material Design 3) |
 | Build Tool | Vite |
 | State Management | Vuex |
 | Routing | Vue Router 4 |
@@ -32,7 +32,7 @@
 │                      Vue 3 Frontend                          │
 │  ┌─────────────┐  ┌─────────────┐  ┌─────────────────┐    │
 │  │   Router   │  │  Vuex Store │  │  Bootstrap 5    │    │
-│  │ (Guards)   │  │  (State)    │  │  (Grid/Layout) │    │
+│  │ (Guards)   │  │  (State)    │  │  (Vuetify)     │    │
 │  └─────────────┘  └─────────────┘  └─────────────────┘    │
 └─────────────────────────────────────────────────────────────┘
                               │
@@ -157,15 +157,15 @@
 - Error message display for invalid credentials
 
 ### 6.2 Products Page (`/products`)
-- **Header:** App logo, search bar, user profile/logout
+- **Header:** App logo, search bar, user profile/logout (using Vuetify `v-app-bar`)
 - **Sidebar:**
-  - Store filters (checkboxes for Go!, Bách Hoá Xanh, Lottemart)
-  - Category filters (dropdown or checkboxes)
+  - Store filters (checkboxes for Go!, Bách Hoá Xanh, Lottemart) - Vuetify `v-checkbox`
+  - Category filters (dropdown) - Vuetify `v-select`
 - **Main Content:**
-  - Product grid (Bootstrap row/col)
-  - Each card shows: image, name, brand, unit, price comparison from all stores
+  - Product grid (Vuetify `v-row`/`v-col`)
+  - Each card shows: image, name, brand, unit, price comparison from all stores (Vuetify `v-card`)
   - Lowest price highlighted
-- **Footer:** "Load More" button for lazy-loading
+- **Footer:** "Load More" button for lazy-loading (Vuetify `v-btn`)
 
 ### 6.3 Product Detail/Edit Page (`/products/:id`)
 - Product information form (name, category, brand, unit, image)
@@ -231,34 +231,72 @@ async fetchProducts({ commit, state }) {
 
 ---
 
-## 9. Bootstrap Grid Layout
+## 9. Vuetify Responsive Grid Layout
 
-### Products Page Layout
+### Products Page Layout - Responsive Design
+
+**Desktop (lg/md):** Sidebar visible, 3-4 products per row
+**Tablet (sm):** Collapsible sidebar, 2 products per row
+**Mobile (xs):** Hidden sidebar (drawer), 1 product per row
+
 ```html
-<div class="container-fluid">
-  <div class="row">
-    <!-- Sidebar -->
-    <div class="col-md-3">
-      <!-- Filters -->
-    </div>
+<v-app>
+  <v-app-bar>...</v-app-bar>
 
-    <!-- Main Content -->
-    <div class="col-md-9">
-      <div class="row">
-        <!-- Product Cards -->
-        <div class="col-md-4 col-sm-6">
-          <!-- Product Card -->
-        </div>
-      </div>
+  <v-navigation-drawer v-model="drawer" temporary>
+    <!-- Filters - collapsible on mobile/tablet -->
+  </v-navigation-drawer>
 
-      <!-- Load More -->
-      <div class="text-center my-4">
-        <button>Load More</button>
-      </div>
-    </div>
-  </div>
-</div>
+  <v-main>
+    <v-container fluid>
+      <v-row>
+        <!-- Sidebar - hidden on mobile -->
+        <v-col cols="12" md="3" class="d-none d-md-block">
+          <!-- Filters -->
+        </v-col>
+
+        <!-- Main Content -->
+        <v-col cols="12" md="9">
+          <v-row>
+            <!-- Responsive columns: 1 on mobile, 2 on tablet, 3-4 on desktop -->
+            <v-col cols="12" sm="6" lg="4">
+              <!-- Product Card -->
+            </v-col>
+          </v-row>
+
+          <!-- Load More -->
+          <div class="text-center my-4">
+            <v-btn>Load More</v-btn>
+          </div>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-main>
+</v-app>
 ```
+
+### Responsive Breakpoints
+| Screen | Size | Products per row | Sidebar |
+|--------|------|-----------------|----------|
+| Mobile | < 600px (xs) | 1 | Hidden (drawer) |
+| Tablet | 600-960px (sm) | 2 | Collapsible |
+| Desktop | 960-1280px (md) | 3 | Visible |
+| Large Desktop | > 1280px (lg) | 4 | Visible |
+
+### Key Vuetify Components Used
+- `v-app` - Application wrapper
+- `v-app-bar` - Top navigation bar
+- `v-navigation-drawer` - Collapsible sidebar for mobile
+- `v-main` - Main content area
+- `v-container` / `v-container-fluid` - Layout container
+- `v-row` / `v-col` - Responsive grid system
+- `v-card` - Product cards
+- `v-text-field` - Search input
+- `v-select` - Category dropdown
+- `v-checkbox` - Store filters
+- `v-btn` - Buttons
+- `v-img` - Product images
+- `v-progress-circular` - Loading spinner
 
 ---
 
@@ -299,7 +337,7 @@ Products will include common supermarket items:
 - [ ] Logout clears auth state and redirects to login
 
 ### Products Page
-- [ ] Products display in Bootstrap grid
+- [ ] Products display in Vuetify grid
 - [ ] Search filters products by name
 - [ ] Store filter shows products with prices from selected stores
 - [ ] Category filter shows products in selected category
@@ -317,7 +355,7 @@ Products will include common supermarket items:
 - [ ] API calls happen inside Vuex actions
 - [ ] Lazy-loading implemented with pagination
 - [ ] Route guards protect authenticated routes
-- [ ] Responsive Bootstrap layout
+- [ ] Responsive Vuetify layout
 
 ---
 

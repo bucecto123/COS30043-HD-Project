@@ -1,17 +1,17 @@
-# Da Nang Price Compare - Implementation Plan
+# Da Nang Price Compare - Implementation Plan (Vuetify Version)
 
 > **For agentic workers:** REQUIRED: Use superpowers:subagent-driven-development (if subagents available) or superpowers:executing-plans to implement this plan. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Build a Vue.js 3 + Bootstrap 5 SPA with Express backend for comparing supermarket prices across Go!, Bách Hoá Xanh, and Lottemart in Da Nang.
+**Goal:** Build a Vue.js 3 + Vuetify 3 SPA with Express backend for comparing supermarket prices across Go!, Bách Hoá Xanh, and Lottemart in Da Nang.
 
 **Architecture:**
 - Vue 3 SPA with Vuex state management and Vue Router
+- Vuetify 3 for Material Design UI components
 - Express.js REST API backend
 - JWT authentication with protected routes
 - Lazy-loading pagination for product listings
-- Bootstrap 5 grid layout for responsive design
 
-**Tech Stack:** Vue.js 3, Vite, Vue Router 4, Vuex 4, Bootstrap 5, Express.js, JWT
+**Tech Stack:** Vue.js 3, Vite, Vue Router 4, Vuex 4, **Vuetify 3**, Express.js, JWT
 
 ---
 
@@ -29,30 +29,32 @@ D:\Study\Home_work\COS30043\project\
 │   └── routes/
 │       ├── auth.js             # Login endpoint
 │       ├── products.js         # CRUD products
-│       └── stores.js           # Stores endpoint
+│       └── stores.js          # Stores endpoint
 │
-├── frontend/                   # Vue 3 SPA
+├── frontend/                   # Vue 3 SPA with Vuetify
 │   ├── index.html             # Entry HTML
 │   ├── vite.config.js         # Vite configuration
 │   ├── package.json           # Frontend dependencies
 │   └── src/
-│       ├── main.js            # Vue app entry
-│       ├── App.vue             # Root component
+│       ├── main.js            # Vue app entry with Vuetify
+│       ├── App.vue            # Root component
+│       ├── plugins/
+│       │   └── vuetify.js    # Vuetify configuration
 │       ├── router/
 │       │   └── index.js       # Vue Router config
 │       ├── store/
 │       │   ├── index.js       # Vuex store entry
-│       │   ├── auth.js        # Auth module
-│       │   └── products.js    # Products module
+│       │   ├── auth.js       # Auth module
+│       │   └── products.js   # Products module
 │       ├── views/
-│       │   ├── Login.vue      # Login page
+│       │   ├── Login.vue      # Login page (Vuetify)
 │       │   ├── Products.vue   # Product list with lazy-load
 │       │   └── ProductEdit.vue # Create/Edit product
 │       └── components/
-│           ├── NavBar.vue     # Top navigation
+│           ├── NavBar.vue     # App bar navigation
 │           ├── ProductCard.vue # Product card component
 │           ├── ProductFilters.vue # Sidebar filters
-│           └── LoadMore.vue   # Lazy-load button
+│           └── LoadMore.vue  # Lazy-load button
 │
 └── docs/
     └── superpowers/
@@ -391,7 +393,6 @@ curl -X POST http://localhost:3000/api/auth/login -H "Content-Type: application/
 
 ```bash
 cd D:\Study\Home_work\COS30043\project
-git init
 git add backend/
 git commit -m "feat: add Express backend with API endpoints"
 ```
@@ -439,9 +440,9 @@ git commit -m "feat: add 100+ products data"
 
 ---
 
-## Chunk 2: Frontend Setup
+## Chunk 2: Frontend Setup with Vuetify
 
-### Task 3: Initialize Vue 3 Frontend
+### Task 3: Initialize Vue 3 + Vuetify Frontend
 
 **Files:**
 - Create: `frontend/package.json`
@@ -449,14 +450,15 @@ git commit -m "feat: add 100+ products data"
 - Create: `frontend/index.html`
 - Create: `frontend/src/main.js`
 - Create: `frontend/src/App.vue`
+- Create: `frontend/src/plugins/vuetify.js`
 
 - [ ] **Step 1: Create frontend directory and package.json**
 
 ```bash
-mkdir -p frontend/src/router frontend/src/store frontend/src/views frontend/src/components
+mkdir -p frontend/src/router frontend/src/store frontend/src/views frontend/src/components frontend/src/plugins
 cd frontend
 npm init -y
-npm install vue@3 vue-router@4 vuex@4 bootstrap@5
+npm install vue@3 vue-router@4 vuex@4 vuetify@3 @mdi/font
 npm install -D vite @vitejs/plugin-vue
 ```
 
@@ -472,10 +474,11 @@ npm install -D vite @vitejs/plugin-vue
     "preview": "vite preview"
   },
   "dependencies": {
-    "bootstrap": "^5.3.3",
+    "@mdi/font": "^7.4.47",
     "vue": "^3.4.0",
     "vue-router": "^4.2.5",
-    "vuex": "^4.1.0"
+    "vuex": "^4.1.0",
+    "vuetify": "^3.5.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.0",
@@ -489,9 +492,13 @@ npm install -D vite @vitejs/plugin-vue
 ```javascript
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import vuetify from 'vite-plugin-vuetify'
 
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [
+    vue(),
+    vuetify({ autoImport: true })
+  ],
   server: {
     port: 5173,
     proxy: {
@@ -504,6 +511,11 @@ export default defineConfig({
 })
 ```
 
+**Also need to install vite-plugin-vuetify:**
+```bash
+npm install -D vite-plugin-vuetify
+```
+
 - [ ] **Step 3: Create index.html**
 
 ```html
@@ -513,7 +525,7 @@ export default defineConfig({
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Da Nang Price Compare</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" rel="stylesheet">
 </head>
 <body>
   <div id="app"></div>
@@ -522,44 +534,80 @@ export default defineConfig({
 </html>
 ```
 
-- [ ] **Step 4: Create main.js**
+- [ ] **Step 4: Create Vuetify plugin configuration**
+
+```javascript
+// frontend/src/plugins/vuetify.js
+
+import 'vuetify/styles'
+import { createVuetify } from 'vuetify'
+import * as components from 'vuetify/components'
+import * as directives from 'vuetify/directives'
+import { aliases, mdi } from 'vuetify/iconsets/mdi'
+import '@mdi/font/css/materialdesignicons.css'
+
+export default createVuetify({
+  components,
+  directives,
+  icons: {
+    defaultSet: 'mdi',
+    aliases,
+    sets: {
+      mdi
+    }
+  },
+  theme: {
+    defaultTheme: 'light',
+    themes: {
+      light: {
+        colors: {
+          primary: '#1976D2',
+          secondary: '#424242',
+          accent: '#82B1FF',
+          error: '#FF5252',
+          info: '#2196F3',
+          success: '#4CAF50',
+          warning: '#FFC107'
+        }
+      }
+    }
+  }
+})
+```
+
+- [ ] **Step 5: Create main.js with Vuetify**
 
 ```javascript
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import 'bootstrap/dist/css/bootstrap.min.css'
+import vuetify from './plugins/vuetify'
 
 const app = createApp(App)
 
 app.use(router)
 app.use(store)
+app.use(vuetify)
 
 app.mount('#app')
 ```
 
-- [ ] **Step 5: Create App.vue**
+- [ ] **Step 6: Create App.vue**
 
 ```vue
 <template>
-  <div id="app">
+  <v-app>
     <router-view />
-  </div>
+  </v-app>
 </template>
 
 <script setup>
-// Root component
+// Root component - Vuetify app wrapper
 </script>
-
-<style>
-body {
-  background-color: #f8f9fa;
-}
-</style>
 ```
 
-- [ ] **Step 6: Test frontend build**
+- [ ] **Step 7: Test frontend build**
 
 ```bash
 cd frontend
@@ -567,11 +615,11 @@ npm install
 npm run dev
 ```
 
-- [ ] **Step 7: Commit**
+- [ ] **Step 8: Commit**
 
 ```bash
 git add frontend/
-git commit -m "feat: add Vue 3 frontend scaffold"
+git commit -m "feat: add Vue 3 + Vuetify frontend scaffold"
 ```
 
 ---
@@ -960,12 +1008,13 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import 'bootstrap/dist/css/bootstrap.min.css'
+import vuetify from './plugins/vuetify'
 
 const app = createApp(App)
 
 app.use(router)
 app.use(store)
+app.use(vuetify)
 
 // Initialize auth state from localStorage
 store.dispatch('auth/initAuth')
@@ -982,59 +1031,70 @@ git commit -m "feat: add Vuex store with auth and products modules"
 
 ---
 
-## Chunk 3: Frontend Components & Views
+## Chunk 3: Vuetify Components & Views
 
-### Task 6: Login Page
+### Task 6: Login Page (Vuetify)
 
 **Files:**
 - Create: `frontend/src/views/Login.vue`
 
-- [ ] **Step 1: Create Login.vue**
+- [ ] **Step 1: Create Login.vue with Vuetify**
 
 ```vue
 <template>
-  <div class="login-page">
-    <div class="login-card">
-      <div class="login-header">
-        <h1>Da Nang Price Compare</h1>
-        <p>Find the best deals in town</p>
-      </div>
+  <v-app>
+    <v-main>
+      <v-container class="fill-height" fluid>
+        <v-row align="center" justify="center">
+          <v-col cols="12" sm="8" md="4">
+            <v-card class="elevation-12">
+              <v-toolbar color="primary" dark flat>
+                <v-toolbar-title>Da Nang Price Compare</v-toolbar-title>
+              </v-toolbar>
+              <v-card-text>
+                <v-form @submit.prevent="handleLogin">
+                  <v-text-field
+                    v-model="username"
+                    label="Username"
+                    prepend-icon="mdi-account"
+                    type="text"
+                    required
+                  ></v-text-field>
 
-      <form @submit.prevent="handleLogin" class="login-form">
-        <div class="mb-3">
-          <label for="username" class="form-label">Username</label>
-          <input
-            type="text"
-            id="username"
-            v-model="username"
-            class="form-control"
-            placeholder="Enter your username"
-            required
-          />
-        </div>
+                  <v-text-field
+                    v-model="password"
+                    label="Password"
+                    prepend-icon="mdi-lock"
+                    type="password"
+                    required
+                  ></v-text-field>
 
-        <div class="mb-3">
-          <label for="password" class="form-label">Password</label>
-          <input
-            type="password"
-            id="password"
-            v-model="password"
-            class="form-control"
-            placeholder="Enter your password"
-            required
-          />
-        </div>
+                  <v-alert
+                    v-if="error"
+                    type="error"
+                    class="mt-2"
+                    closable
+                  >
+                    {{ error }}
+                  </v-alert>
 
-        <div v-if="error" class="alert alert-danger">
-          {{ error }}
-        </div>
-
-        <button type="submit" class="btn btn-primary w-100" :disabled="loading">
-          {{ loading ? 'Logging in...' : 'Login' }}
-        </button>
-      </form>
-    </div>
-  </div>
+                  <v-btn
+                    type="submit"
+                    color="primary"
+                    block
+                    class="mt-4"
+                    :loading="loading"
+                  >
+                    Login
+                  </v-btn>
+                </v-form>
+              </v-card-text>
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-main>
+  </v-app>
 </template>
 
 <script setup>
@@ -1067,71 +1127,18 @@ const handleLogin = async () => {
   }
 }
 </script>
-
-<style scoped>
-.login-page {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f6f7f8;
-}
-
-.login-card {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 420px;
-  overflow: hidden;
-}
-
-.login-header {
-  background: linear-gradient(135deg, #137fec 0%, #0d6efd 100%);
-  padding: 40px 30px;
-  text-align: center;
-  color: white;
-}
-
-.login-header h1 {
-  font-size: 24px;
-  font-weight: 700;
-  margin: 0;
-}
-
-.login-header p {
-  margin-top: 8px;
-  opacity: 0.9;
-}
-
-.login-form {
-  padding: 30px;
-}
-
-.btn-primary {
-  background-color: #137fec;
-  border-color: #137fec;
-  padding: 12px;
-  font-weight: 600;
-}
-
-.btn-primary:hover {
-  background-color: #0d6efd;
-  border-color: #0d6efd;
-}
-</style>
 ```
 
 - [ ] **Step 2: Commit**
 
 ```bash
 git add frontend/src/views/Login.vue
-git commit -m "feat: add Login page component"
+git commit -m "feat: add Login page with Vuetify"
 ```
 
 ---
 
-### Task 7: Navigation & Components
+### Task 7: Navigation & Components (Vuetify)
 
 **Files:**
 - Create: `frontend/src/components/NavBar.vue`
@@ -1143,22 +1150,19 @@ git commit -m "feat: add Login page component"
 
 ```vue
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <div class="container-fluid">
-      <router-link class="navbar-brand" to="/products">
-        Da Nang Price Compare
-      </router-link>
+  <v-app-bar color="primary" dark>
+    <v-app-bar-title>Da Nang Price Compare</v-app-bar-title>
 
-      <div class="d-flex align-items-center">
-        <span v-if="user" class="navbar-text me-3">
-          Welcome, {{ user.username }}
-        </span>
-        <button @click="handleLogout" class="btn btn-outline-light btn-sm">
-          Logout
-        </button>
-      </div>
-    </div>
-  </nav>
+    <v-spacer></v-spacer>
+
+    <span v-if="user" class="mr-4">
+      Welcome, {{ user.username }}
+    </span>
+
+    <v-btn icon @click="handleLogout">
+      <v-icon>mdi-logout</v-icon>
+    </v-btn>
+  </v-app-bar>
 </template>
 
 <script setup>
@@ -1182,37 +1186,55 @@ const handleLogout = () => {
 
 ```vue
 <template>
-  <div class="card product-card h-100">
-    <img :src="product.image" class="card-img-top" :alt="product.name" />
-    <div class="card-body">
-      <h5 class="card-title">{{ product.name }}</h5>
-      <p class="card-text text-muted">{{ product.brand }} - {{ product.unit }}</p>
+  <v-card class="product-card h-100">
+    <v-img
+      :src="product.image"
+      height="180"
+      cover
+      :alt="product.name"
+    ></v-img>
 
-      <div class="price-list">
-        <div
-          v-for="price in product.prices"
-          :key="price.storeId"
-          class="price-item"
-          :class="{ 'best-price': isBestPrice(price) }"
-        >
+    <v-card-title>{{ product.name }}</v-card-title>
+    <v-card-subtitle>
+      {{ product.brand }} - {{ product.unit }}
+    </v-card-subtitle>
+
+    <v-card-text>
+      <div v-for="price in product.prices" :key="price.storeId" class="price-item">
+        <div class="d-flex justify-space-between align-center">
           <span class="store-name">{{ getStoreName(price.storeId) }}</span>
-          <div class="price-values">
+          <div class="text-right">
             <span v-if="price.salePrice" class="sale-price">
               {{ formatPrice(price.salePrice) }}
             </span>
-            <span :class="price.salePrice ? 'regular-price sale' : 'regular-price'">
+            <span
+              :class="price.salePrice ? 'regular-price text-decoration-line-through' : 'regular-price'"
+            >
               {{ formatPrice(price.regularPrice) }}
             </span>
           </div>
         </div>
+        <v-chip
+          v-if="isBestPrice(price)"
+          color="success"
+          size="x-small"
+          class="mt-1"
+        >
+          Best Price
+        </v-chip>
       </div>
-    </div>
-    <div class="card-footer bg-white border-top-0">
-      <router-link :to="`/products/${product.id}`" class="btn btn-outline-primary btn-sm">
+    </v-card-text>
+
+    <v-card-actions>
+      <v-btn
+        color="primary"
+        variant="text"
+        :to="`/products/${product.id}`"
+      >
         Edit
-      </router-link>
-    </div>
-  </div>
+      </v-btn>
+    </v-card-actions>
+  </v-card>
 </template>
 
 <script setup>
@@ -1252,145 +1274,97 @@ const isBestPrice = (price) => {
 
 <style scoped>
 .product-card {
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s;
 }
-
 .product-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-
-.product-card img {
-  height: 180px;
-  object-fit: cover;
-}
-
-.price-list {
-  margin-top: 12px;
-}
-
 .price-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 8px 0;
   border-bottom: 1px solid #eee;
 }
-
 .price-item:last-child {
   border-bottom: none;
 }
-
-.price-item.best-price {
-  background-color: #d4edda;
-  margin: 0 -12px;
-  padding: 8px 12px;
-  border-radius: 4px;
-}
-
 .store-name {
   font-weight: 500;
-  font-size: 14px;
 }
-
-.price-values {
-  text-align: right;
-}
-
-.regular-price {
-  font-weight: 600;
-}
-
-.regular-price.sale {
-  text-decoration: line-through;
-  color: #999;
-  font-size: 12px;
-}
-
 .sale-price {
-  color: #dc3545;
+  color: #f44336;
   font-weight: 700;
   display: block;
 }
-
-.best-price .sale-price,
-.best-price .regular-price {
-  color: #198754;
+.regular-price {
+  font-weight: 600;
 }
 </style>
 ```
 
-- [ ] **Step 3: Create ProductFilters.vue**
+- [ ] **Step 3: Create ProductFilters.vue (with close event for drawer)**
 
 ```vue
 <template>
-  <div class="filters-sidebar">
-    <h5 class="mb-3">Filters</h5>
-
-    <!-- Search -->
-    <div class="mb-4">
-      <label class="form-label">Search</label>
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Search products..."
+  <v-card>
+    <v-card-title class="d-flex justify-space-between align-center">
+      Filters
+      <v-btn
+        v-if="$attrs.close"
+        icon
+        size="small"
+        @click="$emit('close')"
+      >
+        <v-icon>mdi-close</v-icon>
+      </v-btn>
+    </v-card-title>
+    <v-card-text>
+      <!-- Search -->
+      <v-text-field
         v-model="searchQuery"
+        label="Search products"
+        prepend-inner-icon="mdi-magnify"
+        clearable
+        density="compact"
         @input="handleSearch"
-      />
-    </div>
+      ></v-text-field>
 
-    <!-- Store Filter -->
-    <div class="mb-4">
-      <label class="form-label">Store</label>
-      <div class="form-check" v-for="store in stores" :key="store.id">
-        <input
-          class="form-check-input"
-          type="radio"
-          :id="store.id"
+      <!-- Store Filter -->
+      <v-radio-group v-model="selectedStore" @change="handleStoreChange" density="compact">
+        <v-radio label="All Stores" :value="null"></v-radio>
+        <v-radio
+          v-for="store in stores"
+          :key="store.id"
+          :label="store.name"
           :value="store.id"
-          v-model="selectedStore"
-          @change="handleStoreChange"
-        />
-        <label class="form-check-label" :for="store.id">
-          {{ store.name }}
-        </label>
-      </div>
-      <div class="form-check">
-        <input
-          class="form-check-input"
-          type="radio"
-          id="all-stores"
-          :value="null"
-          v-model="selectedStore"
-          @change="handleStoreChange"
-          checked
-        />
-        <label class="form-check-label" for="all-stores">
-          All Stores
-        </label>
-      </div>
-    </div>
+        ></v-radio>
+      </v-radio-group>
 
-    <!-- Category Filter -->
-    <div class="mb-4">
-      <label class="form-label">Category</label>
-      <select class="form-select" v-model="selectedCategory" @change="handleCategoryChange">
-        <option :value="null">All Categories</option>
-        <option v-for="cat in categories" :key="cat" :value="cat">
-          {{ cat }}
-        </option>
-      </select>
-    </div>
+      <!-- Category Filter -->
+      <v-select
+        v-model="selectedCategory"
+        :items="categories"
+        label="Category"
+        clearable
+        density="compact"
+        @update:model-value="handleCategoryChange"
+      ></v-select>
 
-    <button class="btn btn-outline-secondary btn-sm" @click="handleReset">
-      Reset Filters
-    </button>
-  </div>
+      <v-btn
+        block
+        variant="outlined"
+        size="small"
+        @click="handleReset"
+      >
+        Reset Filters
+      </v-btn>
+    </v-card-text>
+  </v-card>
 </template>
 
 <script setup>
 import { ref, computed } from 'vue'
 import { useStore } from 'vuex'
+
+defineEmits(['close'])
 
 const store = useStore()
 
@@ -1437,33 +1411,28 @@ const handleReset = () => {
   store.dispatch('products/fetchProducts', true)
 }
 </script>
-
-<style scoped>
-.filters-sidebar {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-</style>
 ```
 
 - [ ] **Step 4: Create LoadMore.vue**
 
 ```vue
 <template>
-  <div class="load-more-container text-center my-4">
-    <button
+  <div class="text-center my-4">
+    <v-btn
       v-if="hasMore && !loading"
-      class="btn btn-primary"
+      color="primary"
       @click="handleLoadMore"
     >
       Load More
-    </button>
-    <div v-else-if="loading" class="spinner-border text-primary" role="status">
-      <span class="visually-hidden">Loading...</span>
-    </div>
-    <p v-else-if="!hasMore && products.length > 0" class="text-muted">
+    </v-btn>
+
+    <v-progress-circular
+      v-else-if="loading"
+      indeterminate
+      color="primary"
+    ></v-progress-circular>
+
+    <p v-else-if="!hasMore && products.length > 0" class="text-grey">
       No more products to load
     </p>
   </div>
@@ -1483,112 +1452,135 @@ const handleLoadMore = () => {
   store.dispatch('products/fetchProducts')
 }
 </script>
-
-<style scoped>
-.load-more-container {
-  min-height: 60px;
-}
-</style>
 ```
 
 - [ ] **Step 5: Commit**
 
 ```bash
 git add frontend/src/components/
-git commit -m "feat: add NavBar, ProductCard, ProductFilters, LoadMore components"
+git commit -m "feat: add Vuetify components"
 ```
 
 ---
 
-### Task 8: Products Page
+### Task 8: Products Page (Responsive with Navigation Drawer)
 
 **Files:**
 - Create: `frontend/src/views/Products.vue`
 
-- [ ] **Step 1: Create Products.vue**
+- [ ] **Step 1: Create Products.vue with responsive layout**
 
 ```vue
 <template>
-  <div class="products-page">
-    <NavBar />
+  <v-app>
+    <!-- App Bar with hamburger for mobile -->
+    <v-app-bar color="primary" dark>
+      <v-app-bar-nav-icon
+        class="d-md-none"
+        @click="drawer = !drawer"
+      ></v-app-bar-nav-icon>
+      <v-app-bar-title>Da Nang Price Compare</v-app-bar-title>
+      <v-spacer></v-spacer>
+      <span v-if="user" class="mr-4 d-none d-sm-block">
+        {{ user.username }}
+      </span>
+      <v-btn icon @click="handleLogout">
+        <v-icon>mdi-logout</v-icon>
+      </v-btn>
+    </v-app-bar>
 
-    <div class="container-fluid mt-4">
-      <div class="row">
-        <!-- Sidebar -->
-        <div class="col-md-3 mb-4">
-          <ProductFilters />
-        </div>
+    <!-- Navigation Drawer for mobile filters -->
+    <v-navigation-drawer v-model="drawer" temporary>
+      <ProductFilters @close="drawer = false" />
+    </v-navigation-drawer>
 
-        <!-- Main Content -->
-        <div class="col-md-9">
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <h2>Products</h2>
-            <router-link to="/products/new" class="btn btn-success">
-              Add Product
-            </router-link>
-          </div>
+    <v-main>
+      <v-container fluid>
+        <v-row>
+          <!-- Sidebar - hidden on mobile, visible on tablet+ -->
+          <v-col cols="12" md="3" class="d-none d-md-block">
+            <ProductFilters />
+          </v-col>
 
-          <div v-if="error" class="alert alert-danger">
-            {{ error }}
-          </div>
-
-          <!-- Products Grid -->
-          <div class="row">
-            <div
-              v-for="product in products"
-              :key="product.id"
-              class="col-md-4 col-sm-6 mb-4"
-            >
-              <ProductCard :product="product" />
+          <!-- Main Content -->
+          <v-col cols="12" md="9">
+            <div class="d-flex justify-space-between align-center mb-4">
+              <h2 class="text-h5">Products</h2>
+              <v-btn color="success" to="/products/new">
+                <v-icon left>mdi-plus</v-icon>
+                <span class="d-none d-sm-inline">Add Product</span>
+              </v-btn>
             </div>
-          </div>
 
-          <!-- Empty State -->
-          <div v-if="products.length === 0 && !loading" class="text-center py-5">
-            <p class="text-muted">No products found</p>
-          </div>
+            <v-alert
+              v-if="error"
+              type="error"
+              class="mb-4"
+            >
+              {{ error }}
+            </v-alert>
 
-          <!-- Load More -->
-          <LoadMore />
-        </div>
-      </div>
-    </div>
-  </div>
+            <!-- Products Grid - Responsive -->
+            <v-row>
+              <v-col
+                v-for="product in products"
+                :key="product.id"
+                cols="12"
+                sm="6"
+                lg="4"
+              >
+                <ProductCard :product="product" />
+              </v-col>
+            </v-row>
+
+            <!-- Empty State -->
+            <div v-if="products.length === 0 && !loading" class="text-center py-5">
+              <p class="text-grey">No products found</p>
+            </div>
+
+            <!-- Load More -->
+            <LoadMore />
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-main>
+  </v-app>
 </template>
 
 <script setup>
-import { computed, onMounted } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { useStore } from 'vuex'
-import NavBar from '../components/NavBar.vue'
+import { useRouter } from 'vue-router'
 import ProductCard from '../components/ProductCard.vue'
 import ProductFilters from '../components/ProductFilters.vue'
 import LoadMore from '../components/LoadMore.vue'
 
 const store = useStore()
+const router = useRouter()
+const drawer = ref(false)
 
 const products = computed(() => store.getters['products/allProducts'])
 const loading = computed(() => store.getters['products/isLoading'])
 const error = computed(() => store.getters['products/error'])
+const user = computed(() => store.getters['auth/user'])
+
+const handleLogout = () => {
+  store.dispatch('auth/logout')
+  router.push('/login')
+}
 
 onMounted(async () => {
   await store.dispatch('products/fetchStores')
   await store.dispatch('products/fetchProducts', true)
 })
 </script>
-
-<style scoped>
-.products-page {
-  min-height: 100vh;
-  background-color: #f8f9fa;
-}
-</style>
 ```
 
 - [ ] **Step 2: Commit**
 
 ```bash
 git add frontend/src/views/Products.vue
-git commit -m "feat: add Products page with lazy-loading"
+git commit -m "feat: add Products page with Vuetify"
 ```
 
 ---
@@ -1602,136 +1594,135 @@ git commit -m "feat: add Products page with lazy-loading"
 
 ```vue
 <template>
-  <div class="product-edit-page">
+  <v-app>
     <NavBar />
 
-    <div class="container mt-4">
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <div class="card">
-            <div class="card-header">
-              <h4>{{ isEditMode ? 'Edit Product' : 'Add New Product' }}</h4>
-            </div>
-            <div class="card-body">
-              <form @submit.prevent="handleSubmit">
-                <!-- Basic Info -->
-                <div class="row mb-3">
-                  <div class="col-md-6">
-                    <label class="form-label">Product Name</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      v-model="formData.name"
-                      required
-                    />
-                  </div>
-                  <div class="col-md-6">
-                    <label class="form-label">Category</label>
-                    <select class="form-select" v-model="formData.category" required>
-                      <option value="">Select Category</option>
-                      <option v-for="cat in categories" :key="cat" :value="cat">
-                        {{ cat }}
-                      </option>
-                    </select>
-                  </div>
-                </div>
+    <v-main>
+      <v-container>
+        <v-row justify="center">
+          <v-col cols="12" lg="8">
+            <v-card>
+              <v-card-title>
+                {{ isEditMode ? 'Edit Product' : 'Add New Product' }}
+              </v-card-title>
 
-                <div class="row mb-3">
-                  <div class="col-md-6">
-                    <label class="form-label">Brand</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      v-model="formData.brand"
-                      required
-                    />
-                  </div>
-                  <div class="col-md-6">
-                    <label class="form-label">Unit</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      v-model="formData.unit"
-                      placeholder="e.g., 1kg, 500ml, 12pcs"
-                      required
-                    />
-                  </div>
-                </div>
+              <v-card-text>
+                <v-form @submit.prevent="handleSubmit">
+                  <!-- Basic Info -->
+                  <v-row>
+                    <v-col cols="12" md="6">
+                      <v-text-field
+                        v-model="formData.name"
+                        label="Product Name"
+                        required
+                      ></v-text-field>
+                    </v-col>
+                    <v-col cols="12" md="6">
+                      <v-select
+                        v-model="formData.category"
+                        :items="categories"
+                        label="Category"
+                        required
+                      ></v-select>
+                    </v-col>
+                  </v-row>
 
-                <div class="mb-3">
-                  <label class="form-label">Image URL</label>
-                  <input
-                    type="url"
-                    class="form-control"
+                  <v-row>
+                    <v-col cols="12" md="6">
+                      <v-text-field
+                        v-model="formData.brand"
+                        label="Brand"
+                        required
+                      ></v-text-field>
+                    </v-col>
+                    <v-col cols="12" md="6">
+                      <v-text-field
+                        v-model="formData.unit"
+                        label="Unit"
+                        placeholder="e.g., 1kg, 500ml, 12pcs"
+                        required
+                      ></v-text-field>
+                    </v-col>
+                  </v-row>
+
+                  <v-text-field
                     v-model="formData.image"
-                    placeholder="https://..."
-                  />
-                </div>
+                    label="Image URL"
+                    prepend-icon="mdi-image"
+                  ></v-text-field>
 
-                <!-- Prices by Store -->
-                <h5 class="mb-3">Prices by Store</h5>
-                <div v-for="store in stores" :key="store.id" class="card mb-3">
-                  <div class="card-body">
-                    <h6>{{ store.name }}</h6>
-                    <div class="row">
-                      <div class="col-md-4">
-                        <label class="form-label">Regular Price (VND)</label>
-                        <input
-                          type="number"
-                          class="form-control"
-                          v-model="formData.prices[store.id].regularPrice"
-                          min="0"
-                        />
-                      </div>
-                      <div class="col-md-4">
-                        <label class="form-label">Sale Price (VND)</label>
-                        <input
-                          type="number"
-                          class="form-control"
-                          v-model="formData.prices[store.id].salePrice"
-                          min="0"
-                        />
-                      </div>
-                      <div class="col-md-4">
-                        <label class="form-label">Updated</label>
-                        <input
-                          type="date"
-                          class="form-control"
-                          v-model="formData.prices[store.id].updatedAt"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                  <!-- Prices by Store -->
+                  <v-divider class="my-4"></v-divider>
+                  <h3 class="text-h6 mb-4">Prices by Store</h3>
 
-                <div class="d-flex gap-2">
-                  <button type="submit" class="btn btn-primary" :disabled="saving">
-                    {{ saving ? 'Saving...' : 'Save' }}
-                  </button>
-                  <button
-                    v-if="isEditMode"
-                    type="button"
-                    class="btn btn-danger"
-                    @click="handleDelete"
-                    :disabled="deleting"
+                  <v-card
+                    v-for="store in stores"
+                    :key="store.id"
+                    class="mb-3"
+                    variant="outlined"
                   >
-                    {{ deleting ? 'Deleting...' : 'Delete' }}
-                  </button>
-                  <router-link to="/products" class="btn btn-secondary">
-                    Cancel
-                  </router-link>
-                </div>
+                    <v-card-title>{{ store.name }}</v-card-title>
+                    <v-card-text>
+                      <v-row>
+                        <v-col cols="12" md="4">
+                          <v-text-field
+                            v-model.number="formData.prices[store.id].regularPrice"
+                            label="Regular Price (VND)"
+                            type="number"
+                            min="0"
+                          ></v-text-field>
+                        </v-col>
+                        <v-col cols="12" md="4">
+                          <v-text-field
+                            v-model.number="formData.prices[store.id].salePrice"
+                            label="Sale Price (VND)"
+                            type="number"
+                            min="0"
+                          ></v-text-field>
+                        </v-col>
+                        <v-col cols="12" md="4">
+                          <v-text-field
+                            v-model="formData.prices[store.id].updatedAt"
+                            label="Updated"
+                            type="date"
+                          ></v-text-field>
+                        </v-col>
+                      </v-row>
+                    </v-card-text>
+                  </v-card>
 
-                <div v-if="error" class="alert alert-danger mt-3">
-                  {{ error }}
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+                  <div class="d-flex gap-2 mt-4">
+                    <v-btn type="submit" color="primary" :loading="saving">
+                      Save
+                    </v-btn>
+                    <v-btn
+                      v-if="isEditMode"
+                      color="error"
+                      @click="handleDelete"
+                      :loading="deleting"
+                    >
+                      Delete
+                    </v-btn>
+                    <v-btn to="/products" variant="text">
+                      Cancel
+                    </v-btn>
+                  </div>
+
+                  <v-alert
+                    v-if="error"
+                    type="error"
+                    class="mt-4"
+                  >
+                    {{ error }}
+                  </v-alert>
+                </v-form>
+              </v-card-text>
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-main>
+  </v-app>
 </template>
 
 <script setup>
@@ -1775,9 +1766,9 @@ onMounted(async () => {
   await store.dispatch('products/fetchStores')
 
   // Initialize prices for each store
-  stores.value.forEach(store => {
-    formData.value.prices[store.id] = {
-      storeId: store.id,
+  stores.value.forEach(s => {
+    formData.value.prices[s.id] = {
+      storeId: s.id,
       regularPrice: 0,
       salePrice: null,
       updatedAt: new Date().toISOString().split('T')[0]
@@ -1803,10 +1794,10 @@ const loadProduct = async () => {
       formData.value.prices[p.storeId] = { ...p }
     })
 
-    stores.value.forEach(store => {
-      if (!formData.value.prices[store.id]) {
-        formData.value.prices[store.id] = {
-          storeId: store.id,
+    stores.value.forEach(s => {
+      if (!formData.value.prices[s.id]) {
+        formData.value.prices[s.id] = {
+          storeId: s.id,
           regularPrice: 0,
           salePrice: null,
           updatedAt: new Date().toISOString().split('T')[0]
@@ -1863,21 +1854,13 @@ const handleDelete = async () => {
   }
 }
 </script>
-
-<style scoped>
-.product-edit-page {
-  min-height: 100vh;
-  background-color: #f8f9fa;
-  padding-bottom: 40px;
-}
-</style>
 ```
 
 - [ ] **Step 2: Commit**
 
 ```bash
 git add frontend/src/views/ProductEdit.vue
-git commit -m "feat: add ProductEdit page for create/edit/delete"
+git commit -m "feat: add ProductEdit page with Vuetify"
 ```
 
 ---
@@ -1949,11 +1932,13 @@ This plan creates:
 - ✅ Express backend with 3 API routes (auth, stores, products)
 - ✅ 100+ product demo data
 - ✅ Vue 3 SPA with Vuex state management
+- ✅ **Vuetify 3** UI components (Material Design)
+- ✅ **Responsive design** - Desktop, Tablet, Mobile (3 breakpoints)
+- ✅ Navigation drawer for mobile filters
 - ✅ JWT authentication with route guards
 - ✅ Full CRUD operations
 - ✅ Lazy-loading pagination (10 items)
 - ✅ Search and filter functionality
-- ✅ Bootstrap 5 responsive grid layout
-- ✅ Professional UI with wireframe-inspired design
+- ✅ Professional Material Design UI
 
 The implementation is ready for execution using subagent-driven-development or executing-plans skill.
