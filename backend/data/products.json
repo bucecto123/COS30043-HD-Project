@@ -1,0 +1,3152 @@
+[
+  {
+    "id": "prod-001",
+    "name": "Vinamilk Product 1",
+    "category": "Groceries",
+    "brand": "Vinamilk",
+    "unit": "500ml",
+    "image": "https://via.placeholder.com/200x200?text=Vinamilk",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 166681,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 162085,
+        "salePrice": 131202,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 159804,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-002",
+    "name": "Th True Milk Product 2",
+    "category": "Groceries",
+    "brand": "Th True Milk",
+    "unit": "1 chai",
+    "image": "https://via.placeholder.com/200x200?text=Th%20True%20Milk",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 293929,
+        "salePrice": 235572,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 286353,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 297173,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-003",
+    "name": "Milo Product 3",
+    "category": "Groceries",
+    "brand": "Milo",
+    "unit": "500ml",
+    "image": "https://via.placeholder.com/200x200?text=Milo",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 40148,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 52350,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 53240,
+        "salePrice": 37264,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-004",
+    "name": "Nestle Product 4",
+    "category": "Groceries",
+    "brand": "Nestle",
+    "unit": "1 hop",
+    "image": "https://via.placeholder.com/200x200?text=Nestle",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 130166,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 135476,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 128375,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-005",
+    "name": "Ovaltine Product 5",
+    "category": "Groceries",
+    "brand": "Ovaltine",
+    "unit": "24pcs",
+    "image": "https://via.placeholder.com/200x200?text=Ovaltine",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 203451,
+        "salePrice": 164038,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 200853,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 202614,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-006",
+    "name": "Acecook Product 6",
+    "category": "Groceries",
+    "brand": "Acecook",
+    "unit": "1 lon",
+    "image": "https://via.placeholder.com/200x200?text=Acecook",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 133946,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 143909,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 145640,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-007",
+    "name": "Vifon Product 7",
+    "category": "Groceries",
+    "brand": "Vifon",
+    "unit": "500g",
+    "image": "https://via.placeholder.com/200x200?text=Vifon",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 384713,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 390418,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 402369,
+        "salePrice": 315092,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-008",
+    "name": "Nam Nguyet Product 8",
+    "category": "Groceries",
+    "brand": "Nam Nguyet",
+    "unit": "24pcs",
+    "image": "https://via.placeholder.com/200x200?text=Nam%20Nguyet",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 269285,
+        "salePrice": 216916,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 278876,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 262124,
+        "salePrice": 216916,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-009",
+    "name": "Kao Product 9",
+    "category": "Groceries",
+    "brand": "Kao",
+    "unit": "24pcs",
+    "image": "https://via.placeholder.com/200x200?text=Kao",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 239181,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 231738,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 230721,
+        "salePrice": 190469,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-010",
+    "name": "Kinh Do Product 10",
+    "category": "Groceries",
+    "brand": "Kinh Do",
+    "unit": "6pcs",
+    "image": "https://via.placeholder.com/200x200?text=Kinh%20Do",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 254022,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 264432,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 251191,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-011",
+    "name": "Gạo Product 11",
+    "category": "Groceries",
+    "brand": "Gạo",
+    "unit": "500ml",
+    "image": "https://via.placeholder.com/200x200?text=G%E1%BA%A1o",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 134935,
+        "salePrice": 110417,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 131682,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 134531,
+        "salePrice": 110417,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-012",
+    "name": "Mì Product 12",
+    "category": "Groceries",
+    "brand": "Mì",
+    "unit": "1 goi",
+    "image": "https://via.placeholder.com/200x200?text=M%C3%AC",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 479712,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 491464,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 479577,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-013",
+    "name": "Noodles Product 13",
+    "category": "Groceries",
+    "brand": "Noodles",
+    "unit": "12pcs",
+    "image": "https://via.placeholder.com/200x200?text=Noodles",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 422866,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 431950,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 436822,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-014",
+    "name": "Dầu Product 14",
+    "category": "Groceries",
+    "brand": "Dầu",
+    "unit": "500g",
+    "image": "https://via.placeholder.com/200x200?text=D%E1%BA%A7u",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 492910,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 495550,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 498522,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-015",
+    "name": "Nước mắm Product 15",
+    "category": "Groceries",
+    "brand": "Nước mắm",
+    "unit": "1 chai",
+    "image": "https://via.placeholder.com/200x200?text=N%C6%B0%E1%BB%9Bc%20m%E1%BA%AFm",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 122051,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 125228,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 127806,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-016",
+    "name": "Hàng nhập Product 16",
+    "category": "Groceries",
+    "brand": "Hàng nhập",
+    "unit": "1L",
+    "image": "https://via.placeholder.com/200x200?text=H%C3%A0ng%20nh%E1%BA%ADp",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 503010,
+        "salePrice": 399963,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 490665,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 492331,
+        "salePrice": 399963,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-017",
+    "name": "Mè Product 17",
+    "category": "Groceries",
+    "brand": "Mè",
+    "unit": "1kg",
+    "image": "https://via.placeholder.com/200x200?text=M%C3%A8",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 158385,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 154805,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 142898,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-018",
+    "name": "Đường Product 18",
+    "category": "Groceries",
+    "brand": "Đường",
+    "unit": "1 lon",
+    "image": "https://via.placeholder.com/200x200?text=%C4%90%C6%B0%E1%BB%9Dng",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 387448,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 387972,
+        "salePrice": 311420,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 391673,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-019",
+    "name": "Bột Product 19",
+    "category": "Groceries",
+    "brand": "Bột",
+    "unit": "12pcs",
+    "image": "https://via.placeholder.com/200x200?text=B%E1%BB%99t",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 460924,
+        "salePrice": 371124,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 461850,
+        "salePrice": 371124,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 467247,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-020",
+    "name": "Gia vị Product 20",
+    "category": "Groceries",
+    "brand": "Gia vị",
+    "unit": "1 lon",
+    "image": "https://via.placeholder.com/200x200?text=Gia%20v%E1%BB%8B",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 107887,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 107856,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 110435,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-021",
+    "name": "Coca Cola Product 1",
+    "category": "Beverages",
+    "brand": "Coca Cola",
+    "unit": "500g",
+    "image": "https://via.placeholder.com/200x200?text=Coca%20Cola",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 496904,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 488935,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 486064,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-022",
+    "name": "Pepsi Product 2",
+    "category": "Beverages",
+    "brand": "Pepsi",
+    "unit": "500ml",
+    "image": "https://via.placeholder.com/200x200?text=Pepsi",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 464414,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 457976,
+        "salePrice": 368373,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 468300,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-023",
+    "name": "Sprite Product 3",
+    "category": "Beverages",
+    "brand": "Sprite",
+    "unit": "1kg",
+    "image": "https://via.placeholder.com/200x200?text=Sprite",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 306273,
+        "salePrice": 242577,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 297457,
+        "salePrice": 242577,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 312173,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-024",
+    "name": "Fanta Product 4",
+    "category": "Beverages",
+    "brand": "Fanta",
+    "unit": "1 hop",
+    "image": "https://via.placeholder.com/200x200?text=Fanta",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 418674,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 429559,
+        "salePrice": 341430,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 434999,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-025",
+    "name": "Red Bull Product 5",
+    "category": "Beverages",
+    "brand": "Red Bull",
+    "unit": "24pcs",
+    "image": "https://via.placeholder.com/200x200?text=Red%20Bull",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 228167,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 243388,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 237295,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-026",
+    "name": "Sting Product 6",
+    "category": "Beverages",
+    "brand": "Sting",
+    "unit": "12pcs",
+    "image": "https://via.placeholder.com/200x200?text=Sting",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 23594,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 30515,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 31452,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-027",
+    "name": "Nuoc suoi Product 7",
+    "category": "Beverages",
+    "brand": "Nuoc suoi",
+    "unit": "1L",
+    "image": "https://via.placeholder.com/200x200?text=Nuoc%20suoi",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 234895,
+        "salePrice": 181059,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 235611,
+        "salePrice": 181059,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 219737,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-028",
+    "name": "Tra sua Product 8",
+    "category": "Beverages",
+    "brand": "Tra sua",
+    "unit": "1 hop",
+    "image": "https://via.placeholder.com/200x200?text=Tra%20sua",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 402120,
+        "salePrice": 319979,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 403855,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 390708,
+        "salePrice": 319979,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-029",
+    "name": "Sinh to Product 9",
+    "category": "Beverages",
+    "brand": "Sinh to",
+    "unit": "1 lon",
+    "image": "https://via.placeholder.com/200x200?text=Sinh%20to",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 449032,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 459605,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 462717,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-030",
+    "name": "Beer Product 10",
+    "category": "Beverages",
+    "brand": "Beer",
+    "unit": "24pcs",
+    "image": "https://via.placeholder.com/200x200?text=Beer",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 345605,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 338166,
+        "salePrice": 269260,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 340398,
+        "salePrice": 269260,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-031",
+    "name": "Trà Product 11",
+    "category": "Beverages",
+    "brand": "Trà",
+    "unit": "1 goi",
+    "image": "https://via.placeholder.com/200x200?text=Tr%C3%A0",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 344574,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 359081,
+        "salePrice": 280719,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 341869,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-032",
+    "name": "Cà phê Product 12",
+    "category": "Beverages",
+    "brand": "Cà phê",
+    "unit": "1 chai",
+    "image": "https://via.placeholder.com/200x200?text=C%C3%A0%20ph%C3%AA",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 141690,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 137466,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 148746,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-033",
+    "name": "Nước ngọt Product 13",
+    "category": "Beverages",
+    "brand": "Nước ngọt",
+    "unit": "1kg",
+    "image": "https://via.placeholder.com/200x200?text=N%C6%B0%E1%BB%9Bc%20ng%E1%BB%8Dt",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 309762,
+        "salePrice": 255129,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 328641,
+        "salePrice": 255129,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 325330,
+        "salePrice": 255129,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-034",
+    "name": "Nước ép Product 14",
+    "category": "Beverages",
+    "brand": "Nước ép",
+    "unit": "12pcs",
+    "image": "https://via.placeholder.com/200x200?text=N%C6%B0%E1%BB%9Bc%20%C3%A9p",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 445680,
+        "salePrice": 349080,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 426373,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 429606,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-035",
+    "name": "Nước soda Product 15",
+    "category": "Beverages",
+    "brand": "Nước soda",
+    "unit": "500ml",
+    "image": "https://via.placeholder.com/200x200?text=N%C6%B0%E1%BB%9Bc%20soda",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 396251,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 392290,
+        "salePrice": 316161,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 398463,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-036",
+    "name": "Nước coco Product 16",
+    "category": "Beverages",
+    "brand": "Nước coco",
+    "unit": "6pcs",
+    "image": "https://via.placeholder.com/200x200?text=N%C6%B0%E1%BB%9Bc%20coco",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 12286,
+        "salePrice": 8109,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 16262,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 3763,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-037",
+    "name": "Yogurt Product 17",
+    "category": "Beverages",
+    "brand": "Yogurt",
+    "unit": "6pcs",
+    "image": "https://via.placeholder.com/200x200?text=Yogurt",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 150091,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 148991,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 156935,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-038",
+    "name": "Rau cu Product 1",
+    "category": "Fresh Food",
+    "brand": "Rau cu",
+    "unit": "500g",
+    "image": "https://via.placeholder.com/200x200?text=Rau%20cu",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 360525,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 352728,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 344402,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-039",
+    "name": "Thit heo Product 2",
+    "category": "Fresh Food",
+    "brand": "Thit heo",
+    "unit": "1 goi",
+    "image": "https://via.placeholder.com/200x200?text=Thit%20heo",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 395647,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 391546,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 402763,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-040",
+    "name": "Ca Product 3",
+    "category": "Fresh Food",
+    "brand": "Ca",
+    "unit": "1L",
+    "image": "https://via.placeholder.com/200x200?text=Ca",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 258466,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 254341,
+        "salePrice": 211040,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 270573,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-041",
+    "name": "Ga Product 4",
+    "category": "Fresh Food",
+    "brand": "Ga",
+    "unit": "500ml",
+    "image": "https://via.placeholder.com/200x200?text=Ga",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 89729,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 83588,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 90524,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-042",
+    "name": "Trung Product 5",
+    "category": "Fresh Food",
+    "brand": "Trung",
+    "unit": "6pcs",
+    "image": "https://via.placeholder.com/200x200?text=Trung",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 311428,
+        "salePrice": 246944,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 316978,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 307755,
+        "salePrice": 246944,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-043",
+    "name": "Rau xanh Product 6",
+    "category": "Fresh Food",
+    "brand": "Rau xanh",
+    "unit": "6pcs",
+    "image": "https://via.placeholder.com/200x200?text=Rau%20xanh",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 461885,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 479080,
+        "salePrice": 377100,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 468336,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-044",
+    "name": "Hoa qua Product 7",
+    "category": "Fresh Food",
+    "brand": "Hoa qua",
+    "unit": "24pcs",
+    "image": "https://via.placeholder.com/200x200?text=Hoa%20qua",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 409539,
+        "salePrice": 320476,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 407397,
+        "salePrice": 320476,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 406184,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-045",
+    "name": "Nam Product 8",
+    "category": "Fresh Food",
+    "brand": "Nam",
+    "unit": "1 lon",
+    "image": "https://via.placeholder.com/200x200?text=Nam",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 399240,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 393252,
+        "salePrice": 319783,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 400104,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-046",
+    "name": "Mi tom Product 9",
+    "category": "Fresh Food",
+    "brand": "Mi tom",
+    "unit": "500ml",
+    "image": "https://via.placeholder.com/200x200?text=Mi%20tom",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 56268,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 44969,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 56980,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-047",
+    "name": "Hải sản Product 10",
+    "category": "Fresh Food",
+    "brand": "Hải sản",
+    "unit": "6pcs",
+    "image": "https://via.placeholder.com/200x200?text=H%E1%BA%A3i%20s%E1%BA%A3n",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 339818,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 333075,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 339575,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-048",
+    "name": "Rau củ Product 11",
+    "category": "Fresh Food",
+    "brand": "Rau củ",
+    "unit": "1kg",
+    "image": "https://via.placeholder.com/200x200?text=Rau%20c%E1%BB%A7",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 112710,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 117917,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 116407,
+        "salePrice": 94822,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-049",
+    "name": "Thịt bò Product 12",
+    "category": "Fresh Food",
+    "brand": "Thịt bò",
+    "unit": "6pcs",
+    "image": "https://via.placeholder.com/200x200?text=Th%E1%BB%8Bt%20b%C3%B2",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 338156,
+        "salePrice": 277626,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 342594,
+        "salePrice": 277626,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 338397,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-050",
+    "name": "Thịt gà Product 13",
+    "category": "Fresh Food",
+    "brand": "Thịt gà",
+    "unit": "500g",
+    "image": "https://via.placeholder.com/200x200?text=Th%E1%BB%8Bt%20g%C3%A0",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 210798,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 210131,
+        "salePrice": 169591,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 218825,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-051",
+    "name": "Thịt vịt Product 14",
+    "category": "Fresh Food",
+    "brand": "Thịt vịt",
+    "unit": "24pcs",
+    "image": "https://via.placeholder.com/200x200?text=Th%E1%BB%8Bt%20v%E1%BB%8Bt",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 108985,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 106221,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 119798,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-052",
+    "name": "Cá hồi Product 15",
+    "category": "Fresh Food",
+    "brand": "Cá hồi",
+    "unit": "1 hop",
+    "image": "https://via.placeholder.com/200x200?text=C%C3%A1%20h%E1%BB%93i",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 113493,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 94825,
+        "salePrice": 83244,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 98654,
+        "salePrice": 83244,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-053",
+    "name": "Tôm Product 16",
+    "category": "Fresh Food",
+    "brand": "Tôm",
+    "unit": "500g",
+    "image": "https://via.placeholder.com/200x200?text=T%C3%B4m",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 259040,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 270487,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 252608,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-054",
+    "name": "Mực Product 17",
+    "category": "Fresh Food",
+    "brand": "Mực",
+    "unit": "1 goi",
+    "image": "https://via.placeholder.com/200x200?text=M%E1%BB%B1c",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 479883,
+        "salePrice": 379956,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 477081,
+        "salePrice": 379956,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 480058,
+        "salePrice": 379956,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-055",
+    "name": "Omo Product 1",
+    "category": "Household",
+    "brand": "Omo",
+    "unit": "500ml",
+    "image": "https://via.placeholder.com/200x200?text=Omo",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 321462,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 310556,
+        "salePrice": 250284,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 314294,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-056",
+    "name": "Tide Product 2",
+    "category": "Household",
+    "brand": "Tide",
+    "unit": "1 lon",
+    "image": "https://via.placeholder.com/200x200?text=Tide",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 426977,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 417302,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 428022,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-057",
+    "name": "Comfort Product 3",
+    "category": "Household",
+    "brand": "Comfort",
+    "unit": "12pcs",
+    "image": "https://via.placeholder.com/200x200?text=Comfort",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 92541,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 104343,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 90467,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-058",
+    "name": "Sunlight Product 4",
+    "category": "Household",
+    "brand": "Sunlight",
+    "unit": "1 hop",
+    "image": "https://via.placeholder.com/200x200?text=Sunlight",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 51310,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 47674,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 34867,
+        "salePrice": 35380,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-059",
+    "name": "My Hao Product 5",
+    "category": "Household",
+    "brand": "My Hao",
+    "unit": "1L",
+    "image": "https://via.placeholder.com/200x200?text=My%20Hao",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 167401,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 158734,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 170607,
+        "salePrice": 130177,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-060",
+    "name": "Grove Product 6",
+    "category": "Household",
+    "brand": "Grove",
+    "unit": "500ml",
+    "image": "https://via.placeholder.com/200x200?text=Grove",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 17749,
+        "salePrice": 20894,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 24772,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 18707,
+        "salePrice": 20894,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-061",
+    "name": "Gift Product 7",
+    "category": "Household",
+    "brand": "Gift",
+    "unit": "1 lon",
+    "image": "https://via.placeholder.com/200x200?text=Gift",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 211077,
+        "salePrice": 169655,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 209234,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 208090,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-062",
+    "name": "Vanish Product 8",
+    "category": "Household",
+    "brand": "Vanish",
+    "unit": "500g",
+    "image": "https://via.placeholder.com/200x200?text=Vanish",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 342505,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 333438,
+        "salePrice": 271452,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 332177,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-063",
+    "name": "Duck Product 9",
+    "category": "Household",
+    "brand": "Duck",
+    "unit": "1L",
+    "image": "https://via.placeholder.com/200x200?text=Duck",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 390400,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 399578,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 398612,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-064",
+    "name": "Nectar Product 10",
+    "category": "Household",
+    "brand": "Nectar",
+    "unit": "1 goi",
+    "image": "https://via.placeholder.com/200x200?text=Nectar",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 280237,
+        "salePrice": 224541,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 285279,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 280993,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-065",
+    "name": "Nước lau sàn Product 11",
+    "category": "Household",
+    "brand": "Nước lau sàn",
+    "unit": "1 chai",
+    "image": "https://via.placeholder.com/200x200?text=N%C6%B0%E1%BB%9Bc%20lau%20s%C3%A0n",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 44632,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 63979,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 45464,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-066",
+    "name": "Bột giặt Product 12",
+    "category": "Household",
+    "brand": "Bột giặt",
+    "unit": "500g",
+    "image": "https://via.placeholder.com/200x200?text=B%E1%BB%99t%20gi%E1%BA%B7t",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 138371,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 153249,
+        "salePrice": 115692,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 147771,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-067",
+    "name": "Nước xả Product 13",
+    "category": "Household",
+    "brand": "Nước xả",
+    "unit": "1 lon",
+    "image": "https://via.placeholder.com/200x200?text=N%C6%B0%E1%BB%9Bc%20x%E1%BA%A3",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 21733,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 27126,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 20750,
+        "salePrice": 23022,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-068",
+    "name": "Nước rửa chén Product 14",
+    "category": "Household",
+    "brand": "Nước rửa chén",
+    "unit": "500ml",
+    "image": "https://via.placeholder.com/200x200?text=N%C6%B0%E1%BB%9Bc%20r%E1%BB%ADa%20ch%C3%A9n",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 463881,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 483493,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 473676,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-069",
+    "name": "Bàn chải Product 15",
+    "category": "Household",
+    "brand": "Bàn chải",
+    "unit": "24pcs",
+    "image": "https://via.placeholder.com/200x200?text=B%C3%A0n%20ch%E1%BA%A3i",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 291356,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 297410,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 293520,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-070",
+    "name": "Khăn giẻ Product 16",
+    "category": "Household",
+    "brand": "Khăn giẻ",
+    "unit": "1L",
+    "image": "https://via.placeholder.com/200x200?text=Kh%C4%83n%20gi%E1%BA%BB",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 78524,
+        "salePrice": 60343,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 79365,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 80876,
+        "salePrice": 60343,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-071",
+    "name": "Bình xịt Product 17",
+    "category": "Household",
+    "brand": "Bình xịt",
+    "unit": "1kg",
+    "image": "https://via.placeholder.com/200x200?text=B%C3%ACnh%20x%E1%BB%8Bt",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 240145,
+        "salePrice": 197445,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 248658,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 254520,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-072",
+    "name": "Head Shoulders Product 1",
+    "category": "Personal Care",
+    "brand": "Head Shoulders",
+    "unit": "6pcs",
+    "image": "https://via.placeholder.com/200x200?text=Head%20Shoulders",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 415329,
+        "salePrice": 325576,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 401921,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 409168,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-073",
+    "name": "Pantene Product 2",
+    "category": "Personal Care",
+    "brand": "Pantene",
+    "unit": "1 hop",
+    "image": "https://via.placeholder.com/200x200?text=Pantene",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 488166,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 490930,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 502824,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-074",
+    "name": "Clear Product 3",
+    "category": "Personal Care",
+    "brand": "Clear",
+    "unit": "1 chai",
+    "image": "https://via.placeholder.com/200x200?text=Clear",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 229890,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 229920,
+        "salePrice": 176136,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 223734,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-075",
+    "name": "Dove Product 4",
+    "category": "Personal Care",
+    "brand": "Dove",
+    "unit": "24pcs",
+    "image": "https://via.placeholder.com/200x200?text=Dove",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 171015,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 171467,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 175837,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-076",
+    "name": "Nivea Product 5",
+    "category": "Personal Care",
+    "brand": "Nivea",
+    "unit": "500ml",
+    "image": "https://via.placeholder.com/200x200?text=Nivea",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 375828,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 370793,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 374329,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-077",
+    "name": "Lifebuoy Product 6",
+    "category": "Personal Care",
+    "brand": "Lifebuoy",
+    "unit": "1 goi",
+    "image": "https://via.placeholder.com/200x200?text=Lifebuoy",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 278061,
+        "salePrice": 216430,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 266727,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 271611,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-078",
+    "name": "Colgate Product 7",
+    "category": "Personal Care",
+    "brand": "Colgate",
+    "unit": "1L",
+    "image": "https://via.placeholder.com/200x200?text=Colgate",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 388945,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 383279,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 387748,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-079",
+    "name": "CloseUp Product 8",
+    "category": "Personal Care",
+    "brand": "CloseUp",
+    "unit": "1kg",
+    "image": "https://via.placeholder.com/200x200?text=CloseUp",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 272981,
+        "salePrice": 225056,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 281519,
+        "salePrice": 225056,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 273068,
+        "salePrice": 225056,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-080",
+    "name": "Listerine Product 9",
+    "category": "Personal Care",
+    "brand": "Listerine",
+    "unit": "1 goi",
+    "image": "https://via.placeholder.com/200x200?text=Listerine",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 272316,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 272185,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 262359,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-081",
+    "name": "Gillette Product 10",
+    "category": "Personal Care",
+    "brand": "Gillette",
+    "unit": "1kg",
+    "image": "https://via.placeholder.com/200x200?text=Gillette",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 37183,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 43426,
+        "salePrice": 33728,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 45262,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-082",
+    "name": "Xà phòng Product 11",
+    "category": "Personal Care",
+    "brand": "Xà phòng",
+    "unit": "12pcs",
+    "image": "https://via.placeholder.com/200x200?text=X%C3%A0%20ph%C3%B2ng",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 439340,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 438254,
+        "salePrice": 349227,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 426662,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-083",
+    "name": "Sữa tắm Product 12",
+    "category": "Personal Care",
+    "brand": "Sữa tắm",
+    "unit": "1 hop",
+    "image": "https://via.placeholder.com/200x200?text=S%E1%BB%AFa%20t%E1%BA%AFm",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 441053,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 439383,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 441969,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-084",
+    "name": "Kem đánh răng Product 13",
+    "category": "Personal Care",
+    "brand": "Kem đánh răng",
+    "unit": "1L",
+    "image": "https://via.placeholder.com/200x200?text=Kem%20%C4%91%C3%A1nh%20r%C4%83ng",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 454987,
+        "salePrice": 356785,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 445151,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 441564,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-085",
+    "name": "Sữa dưỡng Product 14",
+    "category": "Personal Care",
+    "brand": "Sữa dưỡng",
+    "unit": "1 hop",
+    "image": "https://via.placeholder.com/200x200?text=S%E1%BB%AFa%20d%C6%B0%E1%BB%A1ng",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 235753,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 234929,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 225572,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-086",
+    "name": "Dầu gội Product 15",
+    "category": "Personal Care",
+    "brand": "Dầu gội",
+    "unit": "1 goi",
+    "image": "https://via.placeholder.com/200x200?text=D%E1%BA%A7u%20g%E1%BB%99i",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 138669,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 131242,
+        "salePrice": 109447,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 146172,
+        "salePrice": 109447,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-087",
+    "name": "Sữa rửa mặt Product 16",
+    "category": "Personal Care",
+    "brand": "Sữa rửa mặt",
+    "unit": "1 lon",
+    "image": "https://via.placeholder.com/200x200?text=S%E1%BB%AFa%20r%E1%BB%ADa%20m%E1%BA%B7t",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 264091,
+        "salePrice": 212414,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 266561,
+        "salePrice": 212414,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 266734,
+        "salePrice": 212414,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-088",
+    "name": "Khẩu trang Product 17",
+    "category": "Personal Care",
+    "brand": "Khẩu trang",
+    "unit": "1 goi",
+    "image": "https://via.placeholder.com/200x200?text=Kh%E1%BA%A9u%20trang",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 429219,
+        "salePrice": 347464,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 443061,
+        "salePrice": 347464,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 439091,
+        "salePrice": 347464,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-089",
+    "name": "KitKat Product 1",
+    "category": "Snacks",
+    "brand": "KitKat",
+    "unit": "1 lon",
+    "image": "https://via.placeholder.com/200x200?text=KitKat",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 118438,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 115068,
+        "salePrice": 92974,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 115769,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-090",
+    "name": "Milka Product 2",
+    "category": "Snacks",
+    "brand": "Milka",
+    "unit": "1L",
+    "image": "https://via.placeholder.com/200x200?text=Milka",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 19933,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 15418,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 21170,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-091",
+    "name": "Oreo Product 3",
+    "category": "Snacks",
+    "brand": "Oreo",
+    "unit": "1 goi",
+    "image": "https://via.placeholder.com/200x200?text=Oreo",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 394200,
+        "salePrice": 317549,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 391432,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 393321,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-092",
+    "name": "Lays Product 4",
+    "category": "Snacks",
+    "brand": "Lays",
+    "unit": "1 lon",
+    "image": "https://via.placeholder.com/200x200?text=Lays",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 247040,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 230785,
+        "salePrice": 191880,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 244751,
+        "salePrice": 191880,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-093",
+    "name": "CoCa Product 5",
+    "category": "Snacks",
+    "brand": "CoCa",
+    "unit": "500ml",
+    "image": "https://via.placeholder.com/200x200?text=CoCa",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 50979,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 42332,
+        "salePrice": 36446,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 51550,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-094",
+    "name": "Snickers Product 6",
+    "category": "Snacks",
+    "brand": "Snickers",
+    "unit": "1L",
+    "image": "https://via.placeholder.com/200x200?text=Snickers",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 431768,
+        "salePrice": 346946,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 428073,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 443510,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-095",
+    "name": "MMs Product 7",
+    "category": "Snacks",
+    "brand": "MMs",
+    "unit": "500g",
+    "image": "https://via.placeholder.com/200x200?text=MMs",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 407022,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 392820,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 397800,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-096",
+    "name": "Pringles Product 8",
+    "category": "Snacks",
+    "brand": "Pringles",
+    "unit": "24pcs",
+    "image": "https://via.placeholder.com/200x200?text=Pringles",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 61404,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 59958,
+        "salePrice": 53297,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 71560,
+        "salePrice": 53297,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-097",
+    "name": "Tortilla Product 9",
+    "category": "Snacks",
+    "brand": "Tortilla",
+    "unit": "500ml",
+    "image": "https://via.placeholder.com/200x200?text=Tortilla",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 366308,
+        "salePrice": 285496,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 353930,
+        "salePrice": 285496,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 352941,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-098",
+    "name": "Honey Butter Product 10",
+    "category": "Snacks",
+    "brand": "Honey Butter",
+    "unit": "1 hop",
+    "image": "https://via.placeholder.com/200x200?text=Honey%20Butter",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 69927,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 61741,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 64684,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-099",
+    "name": "Bánh quy Product 11",
+    "category": "Snacks",
+    "brand": "Bánh quy",
+    "unit": "24pcs",
+    "image": "https://via.placeholder.com/200x200?text=B%C3%A1nh%20quy",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 400536,
+        "salePrice": 325064,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 409656,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 412989,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-100",
+    "name": "Kẹo Product 12",
+    "category": "Snacks",
+    "brand": "Kẹo",
+    "unit": "24pcs",
+    "image": "https://via.placeholder.com/200x200?text=K%E1%BA%B9o",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 411793,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 409774,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 412446,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-101",
+    "name": "Snack Product 13",
+    "category": "Snacks",
+    "brand": "Snack",
+    "unit": "1kg",
+    "image": "https://via.placeholder.com/200x200?text=Snack",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 207541,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 197531,
+        "salePrice": 160329,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 198434,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-102",
+    "name": "Chocolate Product 14",
+    "category": "Snacks",
+    "brand": "Chocolate",
+    "unit": "1 chai",
+    "image": "https://via.placeholder.com/200x200?text=Chocolate",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 93923,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 97663,
+        "salePrice": 72667,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 89459,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-103",
+    "name": "Bánh gạo Product 15",
+    "category": "Snacks",
+    "brand": "Bánh gạo",
+    "unit": "12pcs",
+    "image": "https://via.placeholder.com/200x200?text=B%C3%A1nh%20g%E1%BA%A1o",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 213644,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 228214,
+        "salePrice": 176024,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 211803,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-104",
+    "name": "Kẹo chewing Product 16",
+    "category": "Snacks",
+    "brand": "Kẹo chewing",
+    "unit": "1L",
+    "image": "https://via.placeholder.com/200x200?text=K%E1%BA%B9o%20chewing",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 263400,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 270943,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 274947,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "prod-105",
+    "name": "Bánh pie Product 17",
+    "category": "Snacks",
+    "brand": "Bánh pie",
+    "unit": "24pcs",
+    "image": "https://via.placeholder.com/200x200?text=B%C3%A1nh%20pie",
+    "prices": [
+      {
+        "storeId": "store-001",
+        "regularPrice": 61323,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-002",
+        "regularPrice": 59773,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      },
+      {
+        "storeId": "store-003",
+        "regularPrice": 75323,
+        "salePrice": null,
+        "updatedAt": "2026-03-15"
+      }
+    ],
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-03-15"
+  }
+]

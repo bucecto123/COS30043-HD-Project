@@ -1,0 +1,20 @@
+[
+  {
+    "id": "user-001",
+    "username": "admin",
+    "password": "admin123",
+    "email": "admin@danangpricecompare.com",
+    "role": "admin",
+    "fullName": "Administrator",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "user-002",
+    "username": "user",
+    "password": "user123",
+    "email": "user@danangpricecompare.com",
+    "role": "user",
+    "fullName": "Regular User",
+    "createdAt": "2024-01-15T00:00:00.000Z"
+  }
+]

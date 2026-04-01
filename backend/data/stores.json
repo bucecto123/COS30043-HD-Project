@@ -1,0 +1,41 @@
+[
+  {
+    "id": "store-001",
+    "name": "Go!",
+    "address": "01 Đường 2 Tháng 9, Hải Châu, Đà Nẵng",
+    "phone": "0236 1234 567",
+    "image": "https://example.com/images/go-store.jpg",
+    "description": "Go! - Siêu thị tiêu chuẩn với đa dạng sản phẩm",
+    "location": {
+      "lat": 16.0544,
+      "lng": 108.2022
+    },
+    "openHours": "07:00 - 22:00"
+  },
+  {
+    "id": "store-002",
+    "name": "Bách Hoá Xanh",
+    "address": "58 Nguyễn Văn Linh, Hải Châu, Đà Nẵng",
+    "phone": "0236 9876 543",
+    "image": "https://example.com/images/bhx-store.jpg",
+    "description": "Bách Hoá Xanh - Tiện lợi và gần gũi",
+    "location": {
+      "lat": 16.0678,
+      "lng": 108.2134
+    },
+    "openHours": "06:00 - 23:00"
+  },
+  {
+    "id": "store-003",
+    "name": "Lottemart",
+    "address": "255 Hùng Vương, Hải Châu, Đà Nẵng",
+    "phone": "0236 5555 888",
+    "image": "https://example.com/images/lottemart-store.jpg",
+    "description": "Lottemart - Giá tốt mỗi ngày",
+    "location": {
+      "lat": 16.0478,
+      "lng": 108.1899
+    },
+    "openHours": "08:00 - 21:00"
+  }
+]
