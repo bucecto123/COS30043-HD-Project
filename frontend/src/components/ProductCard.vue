@@ -1,11 +1,21 @@
 <template>
-  <div class="product-card h-100" @click="goToEdit">
+  <div class="product-card h-100" @click="goToEdit" v-highlight>
     <div class="card-img-wrap">
       <img v-if="product.image && !imgError" :src="product.image" :alt="product.name" @error="imgError = true" class="product-img" />
       <span v-else class="product-emoji">🛒</span>
       <div v-if="maxDiscount > 0" class="discount-badge">
         -{{ maxDiscount }}%
       </div>
+      <!-- Like button -->
+      <button 
+        class="like-btn" 
+        :class="{ liked: isLiked }"
+        @click.stop="toggleLike"
+        v-tooltip="isLiked ? 'Remove from favorites' : 'Add to favorites'"
+      >
+        {{ isLiked ? '❤️' : '🤍' }}
+        <span class="like-count">{{ likeCount }}</span>
+      </button>
     </div>
 
     <div class="card-body">
@@ -29,8 +39,8 @@
         </div>
       </div>
 
-      <div class="mt-3" v-if="isLoggedIn">
-        <router-link :to="`/products/${product.id}`" class="btn-outline-sage w-100 text-center" @click.stop>
+      <div class="mt-3 d-flex gap-2" v-if="isLoggedIn">
+        <router-link :to="`/products/${product.id}`" class="btn-outline-sage flex-fill text-center" @click.stop>
           ✏️ Edit
         </router-link>
       </div>
@@ -39,7 +49,7 @@
 </template>
 
 <script setup>
-import { computed, ref } from 'vue'
+import { computed, ref, onMounted } from 'vue'
 import { useStore } from 'vuex'
 import { useRouter } from 'vue-router'
 
@@ -55,6 +65,30 @@ const router = useRouter()
 const stores = computed(() => store.getters['products/stores'])
 const isLoggedIn = computed(() => !!store.state.auth.token)
 const imgError = ref(false)
+
+// Like functionality
+const isLiked = ref(false)
+const likeCount = ref(0)
+
+// Load likes from localStorage
+onMounted(() => {
+  const likes = JSON.parse(localStorage.getItem('productLikes') || '{}')
+  isLiked.value = likes[props.product.id]?.liked || false
+  likeCount.value = likes[props.product.id]?.count || Math.floor(Math.random() * 50) + 5
+})
+
+const toggleLike = () => {
+  isLiked.value = !isLiked.value
+  likeCount.value += isLiked.value ? 1 : -1
+  
+  // Save to localStorage
+  const likes = JSON.parse(localStorage.getItem('productLikes') || '{}')
+  likes[props.product.id] = {
+    liked: isLiked.value,
+    count: likeCount.value
+  }
+  localStorage.setItem('productLikes', JSON.stringify(likes))
+}
 
 const goToEdit = () => {
   if (isLoggedIn.value) {
@@ -110,6 +144,37 @@ const isBestPrice = (price) => {
   font-size: 0.75rem;
   padding: 0.2rem 0.5rem;
   border-radius: 50px;
+}
+
+.like-btn {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50px;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.like-btn:hover {
+  transform: scale(1.05);
+}
+
+.like-btn.liked {
+  background: rgba(255, 100, 100, 0.15);
+}
+
+.like-count {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--espresso-light);
 }
 
 .price-list {

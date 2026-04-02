@@ -2,32 +2,21 @@
   <nav class="bloom-nav" :class="{ scrolled: scrolled }">
     <div class="container">
       <div class="d-flex align-items-center justify-content-between">
-        <router-link to="/products" class="navbar-brand d-flex align-items-center gap-2">
+        <router-link to="/" class="navbar-brand d-flex align-items-center gap-2">
           <span class="brand-icon">🛒</span>
           <span class="brand-text">Da Nang<span class="brand-accent">Deals</span></span>
         </router-link>
         
-        <div class="category-pills d-none d-md-flex">
-          <button 
-            class="cat-pill" 
-            :class="{ active: activeCategory === null }"
-            @click="setCategory(null)"
-          >
-            All
-          </button>
-          <button 
-            v-for="cat in categories" 
-            :key="cat"
-            class="cat-pill"
-            :class="{ active: activeCategory === cat }"
-            @click="setCategory(cat)"
-          >
-            {{ cat }}
-          </button>
+        <!-- Main Navigation Links -->
+        <div class="nav-links d-none d-md-flex">
+          <router-link to="/" class="nav-link" :class="{ active: $route.path === '/' }">Home</router-link>
+          <router-link to="/products" class="nav-link" :class="{ active: $route.path.startsWith('/products') }">Products</router-link>
+          <router-link to="/news" class="nav-link" :class="{ active: $route.path === '/news' }">News</router-link>
+          <router-link to="/about" class="nav-link" :class="{ active: $route.path === '/about' }">About</router-link>
         </div>
         
         <div class="d-flex align-items-center gap-3">
-          <router-link to="/products/new" class="nav-icon-btn" title="Add Product">
+          <router-link to="/products/new" class="nav-icon-btn d-none d-sm-flex" title="Add Product" v-if="isAuthenticated">
             ➕
           </router-link>
           
@@ -56,8 +45,24 @@
           <div v-else class="d-flex gap-2">
             <router-link to="/login" class="btn-outline-sage">Sign In</router-link>
           </div>
+
+          <!-- Mobile menu toggle -->
+          <button class="mobile-menu-btn d-md-none" @click="showMobileMenu = !showMobileMenu">
+            {{ showMobileMenu ? '✕' : '☰' }}
+          </button>
         </div>
       </div>
+
+      <!-- Mobile Navigation -->
+      <transition name="slide">
+        <div v-if="showMobileMenu" class="mobile-nav d-md-none">
+          <router-link to="/" class="mobile-nav-link" @click="showMobileMenu = false">🏠 Home</router-link>
+          <router-link to="/products" class="mobile-nav-link" @click="showMobileMenu = false">🛒 Products</router-link>
+          <router-link to="/news" class="mobile-nav-link" @click="showMobileMenu = false">📰 News</router-link>
+          <router-link to="/about" class="mobile-nav-link" @click="showMobileMenu = false">ℹ️ About</router-link>
+          <router-link v-if="isAuthenticated" to="/products/new" class="mobile-nav-link" @click="showMobileMenu = false">➕ Add Product</router-link>
+        </div>
+      </transition>
     </div>
   </nav>
 </template>
@@ -66,26 +71,17 @@
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import { useStore } from 'vuex'
 import { useRouter } from 'vue-router'
-import { PRODUCT_CATEGORIES } from '../constants/categories'
 
 const store = useStore()
 const router = useRouter()
 
 const scrolled = ref(false)
 const showUserMenu = ref(false)
-const activeCategory = ref(null)
+const showMobileMenu = ref(false)
 
-const categories = PRODUCT_CATEGORIES
 const isAuthenticated = computed(() => store.getters['auth/isAuthenticated'])
 const user = computed(() => store.getters['auth/user'])
 const userInitial = computed(() => user.value?.username?.charAt(0)?.toUpperCase() || 'U')
-
-const setCategory = (cat) => {
-  activeCategory.value = cat
-  store.dispatch('products/setFilter', { key: 'category', value: cat })
-  store.dispatch('products/fetchProducts', true)
-  router.push('/products')
-}
 
 const handleLogout = () => {
   store.dispatch('auth/logout')
@@ -131,6 +127,31 @@ onBeforeUnmount(() => {
 
 .brand-accent {
   color: var(--sage);
+}
+
+.nav-links {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.nav-link {
+  padding: 0.5rem 1rem;
+  color: var(--espresso-light);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--espresso);
+  background: rgba(122, 139, 111, 0.08);
+}
+
+.nav-link.active {
+  color: var(--sage-dark);
+  background: rgba(122, 139, 111, 0.12);
 }
 
 .dropdown-header {
@@ -186,5 +207,43 @@ onBeforeUnmount(() => {
 .dropdown-leave-to {
   opacity: 0;
   transform: translateY(-8px);
+}
+
+.mobile-menu-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+.mobile-nav {
+  padding: 1rem 0;
+  border-top: 1px solid rgba(122, 139, 111, 0.1);
+  margin-top: 1rem;
+}
+
+.mobile-nav-link {
+  display: block;
+  padding: 0.75rem 0;
+  color: var(--espresso);
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(122, 139, 111, 0.08);
+}
+
+.mobile-nav-link:last-child {
+  border-bottom: none;
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.3s ease;
+}
+
+.slide-enter-from,
+.slide-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
 }
 </style>

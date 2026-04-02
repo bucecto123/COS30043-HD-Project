@@ -1,15 +1,34 @@
 // frontend/src/router/index.js
 import { createRouter, createWebHistory } from 'vue-router'
-import Login from '../views/Login.vue'
-import Register from '../views/Register.vue'
-import Products from '../views/Products.vue'
-import ProductEdit from '../views/ProductEdit.vue'
 import store from '../store'
+
+// Lazy load views for better performance
+const Home = () => import('../views/Home.vue')
+const News = () => import('../views/News.vue')
+const About = () => import('../views/About.vue')
+const Login = () => import('../views/Login.vue')
+const Register = () => import('../views/Register.vue')
+const Products = () => import('../views/Products.vue')
+const ProductEdit = () => import('../views/ProductEdit.vue')
 
 const routes = [
   {
     path: '/',
-    redirect: '/products'
+    name: 'Home',
+    component: Home,
+    meta: { requiresAuth: false }
+  },
+  {
+    path: '/news',
+    name: 'News',
+    component: News,
+    meta: { requiresAuth: false }
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: About,
+    meta: { requiresAuth: false }
   },
   {
     path: '/login',
