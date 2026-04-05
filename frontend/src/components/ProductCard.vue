@@ -1,5 +1,5 @@
 <template>
-  <div class="product-card h-100" @click="goToEdit" v-highlight>
+  <div class="product-card h-100" :class="{ 'card-selected': selected }">
     <div class="card-img-wrap">
       <img v-if="product.image && !imgError" :src="product.image" :alt="product.name" @error="imgError = true" class="product-img" />
       <span v-else class="product-emoji">🛒</span>
@@ -7,14 +7,23 @@
         -{{ maxDiscount }}%
       </div>
       <!-- Like button -->
-      <button 
-        class="like-btn" 
+      <button
+        class="like-btn"
         :class="{ liked: isLiked }"
         @click.stop="toggleLike"
         v-tooltip="isLiked ? 'Remove from favorites' : 'Add to favorites'"
       >
         {{ isLiked ? '❤️' : '🤍' }}
         <span class="like-count">{{ likeCount }}</span>
+      </button>
+      <!-- Compare toggle button -->
+      <button
+        class="compare-btn"
+        :class="{ 'compare-active': selected }"
+        @click.stop="comparison.toggleProduct(product)"
+        v-tooltip="selected ? 'Remove from comparison' : 'Add to comparison'"
+      >
+        {{ selected ? '⚖️' : '＋' }}
       </button>
     </div>
 
@@ -39,19 +48,14 @@
         </div>
       </div>
 
-      <div class="mt-3 d-flex gap-2" v-if="isLoggedIn">
-        <router-link :to="`/products/${product.id}`" class="btn-outline-sage flex-fill text-center" @click.stop>
-          ✏️ Edit
-        </router-link>
-      </div>
+      <!-- Edit disabled: products are real crawled data from Supabase -->
     </div>
   </div>
 </template>
 
 <script setup>
-import { computed, ref, onMounted } from 'vue'
+import { computed, ref, onMounted, inject } from 'vue'
 import { useStore } from 'vuex'
-import { useRouter } from 'vue-router'
 
 const props = defineProps({
   product: {
@@ -61,10 +65,12 @@ const props = defineProps({
 })
 
 const store = useStore()
-const router = useRouter()
 const stores = computed(() => store.getters['products/stores'])
-const isLoggedIn = computed(() => !!store.state.auth.token)
 const imgError = ref(false)
+
+// Inject the shared comparison composable provided by Products.vue
+const comparison = inject('comparison')
+const selected = computed(() => comparison.isSelected(props.product.id))
 
 // Like functionality
 const isLiked = ref(false)
@@ -90,23 +96,13 @@ const toggleLike = () => {
   localStorage.setItem('productLikes', JSON.stringify(likes))
 }
 
-const goToEdit = () => {
-  if (isLoggedIn.value) {
-    router.push(`/products/${props.product.id}`)
-  }
-}
-
 const getStoreName = (storeId) => {
   const s = stores.value.find(st => st.id === storeId)
   return s ? s.name : storeId
 }
 
-const formatPrice = (price) => {
-  return new Intl.NumberFormat('vi-VN', {
-    style: 'currency',
-    currency: 'VND'
-  }).format(price)
-}
+const vndFormatter = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' })
+const formatPrice = (price) => vndFormatter.format(price)
 
 const getDiscountPercent = (price) => {
   if (!price.salePrice || !price.regularPrice) return 0
@@ -213,5 +209,40 @@ const isBestPrice = (price) => {
   background: rgba(194, 112, 62, 0.1);
   padding: 0.1rem 0.4rem;
   border-radius: 50px;
+}
+
+/* Compare button — bottom-right of image area */
+.compare-btn {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1.5px solid rgba(122, 139, 111, 0.3);
+  border-radius: 50px;
+  padding: 0.25rem 0.55rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  color: var(--sage-dark);
+}
+
+.compare-btn:hover {
+  background: var(--sage);
+  color: white;
+  border-color: var(--sage);
+}
+
+.compare-btn.compare-active {
+  background: var(--sage);
+  color: white;
+  border-color: var(--sage);
+}
+
+/* Selected card highlight */
+.card-selected {
+  border-color: var(--sage) !important;
+  box-shadow: 0 0 0 2px var(--sage), 0 4px 16px rgba(122, 139, 111, 0.2) !important;
 }
 </style>

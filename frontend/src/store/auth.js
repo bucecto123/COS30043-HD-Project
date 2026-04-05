@@ -1,7 +1,7 @@
 // frontend/src/store/auth.js
-// Production-ready authentication store with proper error handling
+// Production-ready authentication store with Axios
 
-import api from './api'
+import { authApi } from './api'
 
 const state = () => ({
   user: null,
@@ -67,7 +67,7 @@ const mutations = {
 
 const actions = {
   // Initialize auth state from localStorage
-  async initAuth({ commit, dispatch }) {
+  async initAuth({ commit }) {
     const token = localStorage.getItem('token')
     const userStr = localStorage.getItem('user')
 
@@ -85,13 +85,13 @@ const actions = {
     commit('SET_INITIALIZED', true)
   },
 
-  // Login action
+  // Login action using Axios
   async login({ commit }, { username, password }) {
     commit('SET_LOADING', true)
     commit('CLEAR_ERROR')
 
     try {
-      const data = await api.login(username, password)
+      const data = await authApi.login(username, password)
 
       if (!data || !data.token || !data.user) {
         throw new Error('Invalid response from server')
@@ -109,13 +109,13 @@ const actions = {
     }
   },
 
-  // Register action
+  // Register action using Axios
   async register({ commit }, { username, password }) {
     commit('SET_LOADING', true)
     commit('CLEAR_ERROR')
 
     try {
-      const data = await api.register(username, password)
+      const data = await authApi.register(username, password)
 
       if (!data || !data.token || !data.user) {
         throw new Error('Invalid response from server')

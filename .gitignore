@@ -1,2 +1,10 @@
 .worktrees/
 node_modules/
+.env
+.env.local
+.env.*.local
+
+# Docs — keep only web code in commits
+docs/
+actual_requirements.txt
+*.pdf

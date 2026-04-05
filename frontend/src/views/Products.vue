@@ -8,11 +8,7 @@
           <h2>Da Nang Price Deals</h2>
           <p>Compare Go!, Bách Hoá Xanh, and Lottemart prices instantly</p>
         </div>
-        <div class="ms-auto d-none d-md-block">
-          <router-link to="/products/new" class="btn-sage">
-            ➕ Add Product
-          </router-link>
-        </div>
+        <!-- Add Product hidden: products are real crawled data -->
       </div>
 
       <!-- Category pills quick-filter -->
@@ -63,7 +59,7 @@
             v-for="(product, index) in products"
             :key="product.id"
             class="col-6 col-md-4 col-lg-3 stagger-in"
-            :style="{ animationDelay: (index * 0.05) + 's' }"
+            :style="{ animationDelay: (Math.min(index % 10, 9) * 0.04) + 's' }"
           >
             <ProductCard :product="product" />
           </div>
@@ -81,19 +77,32 @@
       <!-- Load More -->
       <LoadMore v-if="products.length > 0" />
     </div>
+
+    <!-- Comparison bar (fixed bottom) and overlay -->
+    <ComparisonBar />
+    <ComparisonOverlay />
   </div>
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, provide } from 'vue'
 import { useStore } from 'vuex'
 import ProductCard from '../components/ProductCard.vue'
 import ProductFilters from '../components/ProductFilters.vue'
 import LoadMore from '../components/LoadMore.vue'
+import ComparisonBar from '../components/ComparisonBar.vue'
+import ComparisonOverlay from '../components/ComparisonOverlay.vue'
+import { useProductComparison } from '../composables/useProductComparison'
 import { PRODUCT_CATEGORIES } from '../constants/categories'
 
 const store = useStore()
 
+// ── Comparison feature ───────────────────────────────────────────────────────
+// Create one shared instance and provide it to all child components (ProductCard,
+// ComparisonBar, ComparisonOverlay) without passing props through every level.
+provide('comparison', useProductComparison())
+
+// ── Products state ───────────────────────────────────────────────────────────
 const activeCategory = ref(null)
 const categories = PRODUCT_CATEGORIES
 

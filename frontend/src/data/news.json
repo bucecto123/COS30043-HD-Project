@@ -1,0 +1,146 @@
+[
+  {
+    "id": 1,
+    "date": "2026-04-01",
+    "title": "Go! Supermarket Launches Spring Sale",
+    "content": "Go! supermarket announces massive spring discounts on beverages and snacks. Get up to 30% off on selected items throughout April.",
+    "category": "Promotions",
+    "image": "🛒"
+  },
+  {
+    "id": 2,
+    "date": "2026-03-28",
+    "title": "Bách Hoá Xanh Expands to 5 New Locations",
+    "content": "Bách Hoá Xanh continues rapid expansion with 5 new stores opening in Da Nang's suburban areas, bringing fresh groceries closer to residents.",
+    "category": "Store News",
+    "image": "🏪"
+  },
+  {
+    "id": 3,
+    "date": "2026-03-25",
+    "title": "Price Comparison Tips for Smart Shoppers",
+    "content": "Learn how to maximize your savings by comparing prices across different supermarkets. Our guide helps you save up to 20% on weekly groceries.",
+    "category": "Tips",
+    "image": "💡"
+  },
+  {
+    "id": 4,
+    "date": "2026-03-22",
+    "title": "Lottemart Introduces New Organic Section",
+    "content": "Lottemart Da Nang introduces a dedicated organic produce section featuring locally sourced vegetables and fruits from Central Vietnam farms.",
+    "category": "Store News",
+    "image": "🥬"
+  },
+  {
+    "id": 5,
+    "date": "2026-03-20",
+    "title": "Weekend Flash Sales: Best Deals Roundup",
+    "content": "This weekend's best deals include 25% off dairy products at Go!, buy-one-get-one on snacks at Bách Hoá Xanh, and frozen food discounts at Lottemart.",
+    "category": "Promotions",
+    "image": "⚡"
+  },
+  {
+    "id": 6,
+    "date": "2026-03-18",
+    "title": "New Mobile App Features Released",
+    "content": "Da Nang Deals app now includes barcode scanning, real-time price alerts, and shopping list synchronization across devices.",
+    "category": "App Updates",
+    "image": "📱"
+  },
+  {
+    "id": 7,
+    "date": "2026-03-15",
+    "title": "How to Use Price History Charts",
+    "content": "Our new price history feature helps you identify the best time to buy. Track price trends over 30 days and never miss a good deal.",
+    "category": "Tips",
+    "image": "📊"
+  },
+  {
+    "id": 8,
+    "date": "2026-03-12",
+    "title": "Community Savings Report: March 2026",
+    "content": "Da Nang Deals users collectively saved over 500 million VND in March! Top categories for savings were beverages, rice, and cooking oil.",
+    "category": "Community",
+    "image": "🎉"
+  },
+  {
+    "id": 9,
+    "date": "2026-03-10",
+    "title": "Go! Membership Program Changes",
+    "content": "Go! supermarket updates its loyalty program with new tier benefits. Gold members now receive additional 5% discount on all purchases.",
+    "category": "Store News",
+    "image": "⭐"
+  },
+  {
+    "id": 10,
+    "date": "2026-03-08",
+    "title": "Easter Holiday Shopping Guide",
+    "content": "Plan your Easter shopping with our comprehensive guide. Find the best deals on chocolate, baking supplies, and festive decorations.",
+    "category": "Tips",
+    "image": "🐰"
+  },
+  {
+    "id": 11,
+    "date": "2026-03-05",
+    "title": "New Partner Store: WinMart",
+    "content": "We're excited to announce WinMart as our newest partner store. Compare prices across 4 major supermarket chains in Da Nang!",
+    "category": "App Updates",
+    "image": "🤝"
+  },
+  {
+    "id": 12,
+    "date": "2026-03-02",
+    "title": "User Review: Best Budget Rice Brands",
+    "content": "Community members share their top picks for affordable yet quality rice brands. ST25 continues to dominate as the favorite choice.",
+    "category": "Community",
+    "image": "🍚"
+  },
+  {
+    "id": 13,
+    "date": "2026-02-28",
+    "title": "Bách Hoá Xanh Valentine's Clearance",
+    "content": "Post-Valentine clearance sale at Bách Hoá Xanh! Chocolate and gift items marked down by up to 50%. Limited stock available.",
+    "category": "Promotions",
+    "image": "💝"
+  },
+  {
+    "id": 14,
+    "date": "2026-02-25",
+    "title": "Understanding Unit Pricing",
+    "content": "Learn how to calculate and compare unit prices to make smarter shopping decisions. Bigger isn't always cheaper!",
+    "category": "Tips",
+    "image": "🧮"
+  },
+  {
+    "id": 15,
+    "date": "2026-02-22",
+    "title": "Lottemart Kids' Day Special",
+    "content": "Special discounts on children's snacks, toys, and school supplies at Lottemart. Valid for the entire last week of February.",
+    "category": "Promotions",
+    "image": "👶"
+  },
+  {
+    "id": 16,
+    "date": "2026-02-20",
+    "title": "Price Alert Feature Now Available",
+    "content": "Set custom price alerts for your favorite products. Get notified instantly when prices drop below your target.",
+    "category": "App Updates",
+    "image": "🔔"
+  },
+  {
+    "id": 17,
+    "date": "2026-02-18",
+    "title": "Weekly Top 10 Deals",
+    "content": "This week's hottest deals: Coca-Cola 24-pack at Go!, fresh milk at Bách Hoá Xanh, and instant noodles bulk pack at Lottemart.",
+    "category": "Promotions",
+    "image": "🔥"
+  },
+  {
+    "id": 18,
+    "date": "2026-02-15",
+    "title": "Community Milestone: 10,000 Users!",
+    "content": "Thank you for helping us reach 10,000 active users! Together, we're making grocery shopping smarter in Da Nang.",
+    "category": "Community",
+    "image": "🎊"
+  }
+]

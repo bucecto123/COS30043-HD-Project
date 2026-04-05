@@ -4,7 +4,7 @@
       <div class="d-flex align-items-center justify-content-between">
         <router-link to="/" class="navbar-brand d-flex align-items-center gap-2">
           <span class="brand-icon">🛒</span>
-          <span class="brand-text">Da Nang<span class="brand-accent">Deals</span></span>
+          <span class="brand-text">Da Nang <span class="brand-accent">Deals</span></span>
         </router-link>
         
         <!-- Main Navigation Links -->
@@ -16,10 +16,12 @@
         </div>
         
         <div class="d-flex align-items-center gap-3">
-          <router-link to="/products/new" class="nav-icon-btn d-none d-sm-flex" title="Add Product" v-if="isAuthenticated">
-            ➕
-          </router-link>
+          <!-- Add Product hidden: products are real crawled data -->
           
+          <router-link v-if="isAuthenticated" to="/products/new" class="btn-sage" style="font-size: 0.85rem; padding: 0.45rem 1rem;">
+            + Add Product
+          </router-link>
+
           <div class="position-relative" v-if="isAuthenticated" @click.stop>
             <button class="user-avatar" @click="showUserMenu = !showUserMenu">
               {{ userInitial }}
@@ -31,8 +33,11 @@
                   <span class="dropdown-role">{{ user?.role || 'user' }}</span>
                 </div>
                 <div class="dropdown-divider-custom"></div>
+                <router-link to="/products/new" class="dropdown-item" @click="showUserMenu = false">
+                  ➕ Add Product
+                </router-link>
                 <router-link to="/products" class="dropdown-item" @click="showUserMenu = false">
-                  📦 My Products
+                  📦 Browse Products
                 </router-link>
                 <div class="dropdown-divider-custom"></div>
                 <button class="dropdown-item text-danger" @click="handleLogout">

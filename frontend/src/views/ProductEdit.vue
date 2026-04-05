@@ -313,11 +313,11 @@ onMounted(async () => {
   }
 
   if (isEditMode.value) {
-    const response = await fetch(`/api/products/${route.params.id}`)
-    if (response.ok) {
-      const data = await response.json()
+    try {
+      const { productsApi } = await import('../store/api')
+      const data = await productsApi.getById(route.params.id)
       product.value = data
-    } else {
+    } catch (err) {
       error.value = 'Product not found'
       router.push('/products')
     }
