@@ -62,12 +62,16 @@ router.post('/register', (req, res) => {
     createdAt: new Date().toISOString()
   };
 
-  // Save to users.json
+  // Save to users.json (best-effort — read-only on serverless environments)
   users.push(newUser);
-  fs.writeFileSync(
-    path.join(__dirname, '../data/users.json'),
-    JSON.stringify(users, null, 2)
-  );
+  try {
+    fs.writeFileSync(
+      path.join(__dirname, '../data/users.json'),
+      JSON.stringify(users, null, 2)
+    );
+  } catch (_) {
+    // Filesystem is read-only (e.g. Vercel) — user exists in memory for this instance
+  }
 
   // Generate JWT token
   const token = jwt.sign(
