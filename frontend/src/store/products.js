@@ -3,8 +3,33 @@
 
 import { productsApi, storesApi } from './api'
 
+const PRICE_OVERRIDES_KEY = 'productPriceOverrides'
+
+function loadOverrides() {
+  try { return JSON.parse(localStorage.getItem(PRICE_OVERRIDES_KEY) || '{}') } catch { return {} }
+}
+
+function saveOverrides(overrides) {
+  localStorage.setItem(PRICE_OVERRIDES_KEY, JSON.stringify(overrides))
+}
+
+function applyOverrides(products, overrides) {
+  return products.map(product => {
+    const po = overrides[product.id]
+    if (!po) return product
+    return {
+      ...product,
+      prices: product.prices.map(price => {
+        const o = po[price.storeId]
+        return o ? { ...price, ...o } : price
+      })
+    }
+  })
+}
+
 const state = () => ({
   items: [],
+  localPriceOverrides: loadOverrides(),
   currentPage: 0,
   hasMore: true,
   loading: false,
@@ -27,10 +52,20 @@ const getters = {
 
 const mutations = {
   SET_PRODUCTS(state, products) {
-    state.items = products
+    state.items = applyOverrides(products, state.localPriceOverrides)
   },
   APPEND_PRODUCTS(state, products) {
-    state.items = [...state.items, ...products]
+    state.items = [...state.items, ...applyOverrides(products, state.localPriceOverrides)]
+  },
+  SET_LOCAL_PRICE(state, { productId, storeId, regularPrice, salePrice }) {
+    if (!state.localPriceOverrides[productId]) state.localPriceOverrides[productId] = {}
+    state.localPriceOverrides[productId][storeId] = { regularPrice, salePrice }
+    saveOverrides(state.localPriceOverrides)
+    const product = state.items.find(p => p.id === productId)
+    if (product) {
+      const idx = product.prices.findIndex(p => p.storeId === storeId)
+      if (idx !== -1) product.prices.splice(idx, 1, { ...product.prices[idx], regularPrice, salePrice })
+    }
   },
   ADD_PRODUCT(state, product) {
     state.items.unshift(product)
@@ -134,6 +169,10 @@ const actions = {
   async deleteProduct({ commit }, productId) {
     await productsApi.delete(productId)
     commit('REMOVE_PRODUCT', productId)
+  },
+
+  setLocalPrice({ commit }, payload) {
+    commit('SET_LOCAL_PRICE', payload)
   },
 
   setFilter({ commit }, { key, value }) {

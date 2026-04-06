@@ -12,11 +12,13 @@
         <div class="row g-3">
           <div class="col-12 col-md-6 col-lg-4">
             <label class="bloom-label">Search</label>
-            <input 
-              type="text" 
-              class="bloom-input" 
+            <input
+              type="text"
+              class="bloom-input"
               v-model="searchQuery"
+              v-focus
               placeholder="Search by title or content..."
+              aria-label="Search news by title or content"
             >
           </div>
           <div class="col-6 col-md-3 col-lg-2">
@@ -74,7 +76,7 @@
                 <span class="news-category">{{ item.category }}</span>
                 <span class="news-date">{{ formatDate(item.date) }}</span>
               </div>
-              <h3 class="news-title">{{ item.title }}</h3>
+              <h3 class="news-title" v-highlight>{{ item.title }}</h3>
               <p class="news-excerpt">{{ item.content }}</p>
             </div>
           </article>

@@ -12,19 +12,20 @@
         :class="{ liked: isLiked }"
         @click.stop="toggleLike"
         v-tooltip="isLiked ? 'Remove from favorites' : 'Add to favorites'"
+        :aria-label="isLiked ? 'Remove from favorites' : 'Add to favorites'"
+        :aria-pressed="isLiked"
       >
         {{ isLiked ? '❤️' : '🤍' }}
         <span class="like-count">{{ likeCount }}</span>
       </button>
-      <!-- Compare toggle button -->
-      <button
-        class="compare-btn"
-        :class="{ 'compare-active': selected }"
-        @click.stop="comparison.toggleProduct(product)"
-        v-tooltip="selected ? 'Remove from comparison' : 'Add to comparison'"
-      >
-        {{ selected ? '⚖️' : '＋' }}
-      </button>
+      <!-- compare button goes here -->
+       <button
+       class="compare-btn"
+       :class="{'compare-active':selected}"
+       @click.stop="comparison.toggleProduct(product)"
+       :aria-label="selected ? 'Remove from comparison' : 'Add to comparison'"
+       :aria-pressed="selected"
+       >{{ selected ? '✓' : '+' }}</button>
     </div>
 
     <div class="card-body">
@@ -34,27 +35,53 @@
 
       <div class="price-list mt-2">
         <div v-for="price in product.prices" :key="price.storeId" class="price-item">
-          <div class="d-flex justify-content-between align-items-center">
-            <span class="store-name">{{ getStoreName(price.storeId) }}</span>
-            <div class="text-end">
-              <span class="product-price">{{ formatPrice(price.salePrice || price.regularPrice) }}</span>
-              <span v-if="price.salePrice" class="old-price">{{ formatPrice(price.regularPrice) }}</span>
+          <!-- Edit mode -->
+          <template v-if="editingPrice?.storeId === price.storeId">
+            <div class="price-edit-form">
+              <span class="store-name mb-1">{{ getStoreName(price.storeId) }}</span>
+              <input
+                v-model.number="editingPrice.regularPrice"
+                type="number"
+                class="price-input"
+                placeholder="Regular price"
+              />
+              <input
+                v-model.number="editingPrice.salePrice"
+                type="number"
+                class="price-input"
+                placeholder="Sale price (optional)"
+              />
+              <div class="edit-actions">
+                <button class="edit-save-btn" @click.stop="saveEdit">✓ Save</button>
+                <button class="edit-cancel-btn" @click.stop="cancelEdit">✕</button>
+              </div>
             </div>
-          </div>
-          <div class="d-flex gap-1 mt-1 flex-wrap">
-            <span v-if="isBestPrice(price)" class="badge-best">🏆 Best</span>
-            <span v-if="getDiscountPercent(price) > 0" class="badge-save">-{{ getDiscountPercent(price) }}%</span>
-          </div>
+          </template>
+          <!-- Display mode -->
+          <template v-else>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="store-name">{{ getStoreName(price.storeId) }}</span>
+              <div class="d-flex align-items-center gap-1">
+                <div class="text-end">
+                  <span class="product-price">{{ formatPrice(price.salePrice || price.regularPrice) }}</span>
+                  <span v-if="price.salePrice" class="old-price">{{ formatPrice(price.regularPrice) }}</span>
+                </div>
+                <button class="edit-price-btn" @click.stop="startEdit(price)" title="Edit price locally">✏️</button>
+              </div>
+            </div>
+            <div class="d-flex gap-1 mt-1 flex-wrap">
+              <span v-if="isBestPrice(price)" class="badge-best">🏆 Best</span>
+              <span v-if="getDiscountPercent(price) > 0" class="badge-save">-{{ getDiscountPercent(price) }}%</span>
+            </div>
+          </template>
         </div>
       </div>
-
-      <!-- Edit disabled: products are real crawled data from Supabase -->
     </div>
   </div>
 </template>
 
 <script setup>
-import { computed, ref, onMounted, inject } from 'vue'
+import { computed, ref, onMounted, inject } from 'vue'  // add inject
 import { useStore } from 'vuex'
 
 const props = defineProps({
@@ -68,9 +95,27 @@ const store = useStore()
 const stores = computed(() => store.getters['products/stores'])
 const imgError = ref(false)
 
-// Inject the shared comparison composable provided by Products.vue
 const comparison = inject('comparison')
 const selected = computed(() => comparison.isSelected(props.product.id))
+
+// Local price editing
+const editingPrice = ref(null)
+
+function startEdit(price) {
+  editingPrice.value = { storeId: price.storeId, regularPrice: price.regularPrice, salePrice: price.salePrice }
+}
+
+function saveEdit() {
+  store.dispatch('products/setLocalPrice', {
+    productId: props.product.id,
+    ...editingPrice.value
+  })
+  editingPrice.value = null
+}
+
+function cancelEdit() {
+  editingPrice.value = null
+}
 
 // Like functionality
 const isLiked = ref(false)
@@ -211,38 +256,64 @@ const isBestPrice = (price) => {
   border-radius: 50px;
 }
 
-/* Compare button — bottom-right of image area */
+.edit-price-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.75rem;
+  opacity: 0.4;
+  padding: 0.1rem 0.2rem;
+  transition: opacity 0.2s;
+}
+.edit-price-btn:hover { opacity: 1; }
+
+.price-edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.3rem 0;
+}
+.price-input {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid rgba(122,139,111,0.4);
+  border-radius: var(--radius-sm, 6px);
+  width: 100%;
+}
+.edit-actions { display: flex; gap: 0.4rem; }
+.edit-save-btn {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  background: var(--sage);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.edit-cancel-btn {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  background: none;
+  border: 1px solid rgba(59,47,47,0.2);
+  border-radius: 50px;
+  cursor: pointer;
+  color: var(--espresso-light);
+}
+
+/* .compare-btn, .compare-btn.compare-active, .card-selected */
 .compare-btn {
   position: absolute;
   bottom: 8px;
   right: 8px;
-  background: rgba(255, 255, 255, 0.9);
-  border: 1.5px solid rgba(122, 139, 111, 0.3);
-  border-radius: 50px;
-  padding: 0.25rem 0.55rem;
-  font-size: 0.8rem;
-  font-weight: 700;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1.5px solid var(--sage);
+  background: white;
   cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  color: var(--sage-dark);
+  font-size: 0.9rem;
+  transition: all 0.2s;
 }
-
-.compare-btn:hover {
-  background: var(--sage);
-  color: white;
-  border-color: var(--sage);
-}
-
-.compare-btn.compare-active {
-  background: var(--sage);
-  color: white;
-  border-color: var(--sage);
-}
-
-/* Selected card highlight */
-.card-selected {
-  border-color: var(--sage) !important;
-  box-shadow: 0 0 0 2px var(--sage), 0 4px 16px rgba(122, 139, 111, 0.2) !important;
-}
+.compare-btn.compare-active { background: var(--sage); color: white; }
+.card-selected { border: 2px solid var(--sage); box-shadow: 0 0 0 2px rgba(107,143,94,0.3); }
 </style>

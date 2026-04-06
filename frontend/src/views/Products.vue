@@ -78,28 +78,24 @@
       <LoadMore v-if="products.length > 0" />
     </div>
 
-    <!-- Comparison bar (fixed bottom) and overlay -->
     <ComparisonBar />
     <ComparisonOverlay />
   </div>
 </template>
 
 <script setup>
-import { ref, computed, onMounted, provide } from 'vue'
+import { ref, computed, onMounted, provide } from 'vue'  // add provide
 import { useStore } from 'vuex'
 import ProductCard from '../components/ProductCard.vue'
 import ProductFilters from '../components/ProductFilters.vue'
 import LoadMore from '../components/LoadMore.vue'
 import ComparisonBar from '../components/ComparisonBar.vue'
 import ComparisonOverlay from '../components/ComparisonOverlay.vue'
-import { useProductComparison } from '../composables/useProductComparison'
+import { useProductComparison } from '../composables/useProductComparison.js'
 import { PRODUCT_CATEGORIES } from '../constants/categories'
 
 const store = useStore()
 
-// ── Comparison feature ───────────────────────────────────────────────────────
-// Create one shared instance and provide it to all child components (ProductCard,
-// ComparisonBar, ComparisonOverlay) without passing props through every level.
 provide('comparison', useProductComparison())
 
 // ── Products state ───────────────────────────────────────────────────────────
