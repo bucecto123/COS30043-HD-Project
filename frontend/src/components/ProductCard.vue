@@ -29,7 +29,10 @@
     </div>
 
     <div class="card-body">
-      <span class="store-tag">📦 {{ product.brand || 'Various' }}</span>
+      <div class="d-flex justify-content-between align-items-start">
+        <span class="store-tag">📦 {{ product.brand || 'Various' }}</span>
+        <button v-if="isAdmin" class="delete-btn" @click.stop="confirmDelete" title="Delete product">🗑️</button>
+      </div>
       <div class="product-name">{{ product.name }}</div>
       <div class="text-espresso-light" style="font-size: 0.8rem;">{{ product.unit }}</div>
 
@@ -116,6 +119,11 @@ function saveEdit() {
 
 function cancelEdit() {
   editingPrice.value = null
+}
+
+async function confirmDelete() {
+  if (!confirm(`Delete "${props.product.name}"? This cannot be undone.`)) return
+  await store.dispatch('products/deleteProduct', props.product.id)
 }
 
 // Like functionality
@@ -267,6 +275,18 @@ const isBestPrice = (price) => {
   transition: opacity 0.2s;
 }
 .edit-price-btn:hover { opacity: 1; }
+
+.delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.8rem;
+  opacity: 0.35;
+  padding: 0.1rem 0.2rem;
+  transition: opacity 0.2s;
+  line-height: 1;
+}
+.delete-btn:hover { opacity: 1; }
 
 .price-edit-form {
   display: flex;
