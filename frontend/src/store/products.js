@@ -167,7 +167,11 @@ const actions = {
   },
 
   async deleteProduct({ commit }, productId) {
-    await productsApi.delete(productId)
+    try {
+      await productsApi.delete(productId)
+    } catch (_) {
+      // Best-effort — always remove from UI state
+    }
     commit('REMOVE_PRODUCT', productId)
   },
 

@@ -195,10 +195,20 @@ export const productsApi = {
     return api.get(`/products/${id}`)
   },
 
-  // Create/update/delete use the Express backend (user-managed products)
+  // Create/update use the Express backend (user-managed products)
   create: (productData) => api.post('/products', productData),
   update: (id, productData) => api.put(`/products/${id}`, productData),
-  delete: (id) => api.delete(`/products/${id}`)
+
+  // Delete tries Supabase first (crawled products), falls back to Express (user-created)
+  async delete(id) {
+    const { error } = await supabase
+      .from('normalized_products')
+      .delete()
+      .eq('product_id', id)
+    if (!error) return { success: true }
+    // Fallback: user-created product in Express backend
+    return api.delete(`/products/${id}`)
+  }
 }
 
 // ---------------------------------------------------------------------------
