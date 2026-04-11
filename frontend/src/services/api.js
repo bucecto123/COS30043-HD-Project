@@ -1,4 +1,4 @@
-// frontend/src/store/api.js
+// frontend/src/services/api.js
 // Auth uses Axios → Express backend
 // Products/Stores use Supabase (real crawled data)
 

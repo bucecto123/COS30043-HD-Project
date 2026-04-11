@@ -1,7 +1,7 @@
 // frontend/src/store/products.js
 // Products store using Axios for API calls
 
-import { productsApi, storesApi } from './api'
+import { productsApi, storesApi } from '../services/api'
 
 const PRICE_OVERRIDES_KEY = 'productPriceOverrides'
 

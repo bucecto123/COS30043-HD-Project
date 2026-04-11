@@ -1,7 +1,7 @@
 // frontend/src/store/auth.js
 // Production-ready authentication store with Axios
 
-import { authApi } from './api'
+import { authApi } from '../services/api'
 
 const state = () => ({
   user: null,

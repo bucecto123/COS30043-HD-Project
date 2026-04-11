@@ -314,7 +314,7 @@ onMounted(async () => {
 
   if (isEditMode.value) {
     try {
-      const { productsApi } = await import('../store/api')
+      const { productsApi } = await import('../services/api')
       const data = await productsApi.getById(route.params.id)
       product.value = data
     } catch (err) {
