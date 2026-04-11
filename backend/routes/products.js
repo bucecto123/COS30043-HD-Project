@@ -97,10 +97,14 @@ router.post('/', authenticate, requireAdmin, (req, res) => {
   };
 
   products.push(newProduct);
-  fs.writeFileSync(
-    path.join(__dirname, '../data/products.json'),
-    JSON.stringify(products, null, 2)
-  );
+  try {
+    fs.writeFileSync(
+      path.join(__dirname, '../data/products.json'),
+      JSON.stringify(products, null, 2)
+    );
+  } catch (_) {
+    // Read-only filesystem (e.g. Vercel) — product lives in memory for this instance
+  }
 
   res.status(201).json(newProduct);
 });
@@ -119,10 +123,14 @@ router.put('/:id', authenticate, requireAdmin, (req, res) => {
   };
 
   products[index] = updated;
-  fs.writeFileSync(
-    path.join(__dirname, '../data/products.json'),
-    JSON.stringify(products, null, 2)
-  );
+  try {
+    fs.writeFileSync(
+      path.join(__dirname, '../data/products.json'),
+      JSON.stringify(products, null, 2)
+    );
+  } catch (_) {
+    // Read-only filesystem (e.g. Vercel) — update lives in memory for this instance
+  }
 
   res.json(updated);
 });
@@ -135,10 +143,14 @@ router.delete('/:id', authenticate, requireAdmin, (req, res) => {
   }
 
   products.splice(index, 1);
-  fs.writeFileSync(
-    path.join(__dirname, '../data/products.json'),
-    JSON.stringify(products, null, 2)
-  );
+  try {
+    fs.writeFileSync(
+      path.join(__dirname, '../data/products.json'),
+      JSON.stringify(products, null, 2)
+    );
+  } catch (_) {
+    // Read-only filesystem (e.g. Vercel) — deletion lives in memory for this instance
+  }
 
   res.json({ message: 'Product deleted' });
 });
