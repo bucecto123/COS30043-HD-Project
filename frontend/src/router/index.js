@@ -52,13 +52,13 @@ const routes = [
     path: '/products/new',
     name: 'NewProduct',
     component: ProductEdit,
-    meta: { requiresAuth: true }
+    meta: { requiresAuth: true, requiresAdmin: true }
   },
   {
     path: '/products/:id',
     name: 'EditProduct',
     component: ProductEdit,
-    meta: { requiresAuth: true }
+    meta: { requiresAuth: true, requiresAdmin: true }
   }
 ]
 
@@ -70,6 +70,7 @@ const router = createRouter({
 // Navigation guards
 router.beforeEach((to, from, next) => {
   const isAuthenticated = store.getters['auth/isAuthenticated']
+  const isAdmin = store.getters['auth/isAdmin']
 
   // Protected routes - redirect to login with return URL
   if (to.meta.requiresAuth && !isAuthenticated) {
@@ -77,6 +78,12 @@ router.beforeEach((to, from, next) => {
       path: '/login',
       query: { redirect: to.fullPath }
     })
+    return
+  }
+
+  // Admin-only routes - redirect non-admins to products page
+  if (to.meta.requiresAdmin && !isAdmin) {
+    next('/products')
     return
   }
 

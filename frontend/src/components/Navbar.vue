@@ -18,7 +18,7 @@
         <div class="d-flex align-items-center gap-3">
           <!-- Add Product hidden: products are real crawled data -->
           
-          <router-link v-if="isAuthenticated" to="/products/new" class="btn-sage" style="font-size: 0.85rem; padding: 0.45rem 1rem;">
+          <router-link v-if="isAdmin" to="/products/new" class="btn-sage" style="font-size: 0.85rem; padding: 0.45rem 1rem;">
             + Add Product
           </router-link>
 
@@ -65,7 +65,7 @@
           <router-link to="/products" class="mobile-nav-link" @click="showMobileMenu = false">🛒 Products</router-link>
           <router-link to="/news" class="mobile-nav-link" @click="showMobileMenu = false">📰 News</router-link>
           <router-link to="/about" class="mobile-nav-link" @click="showMobileMenu = false">ℹ️ About</router-link>
-          <router-link v-if="isAuthenticated" to="/products/new" class="mobile-nav-link" @click="showMobileMenu = false">➕ Add Product</router-link>
+          <router-link v-if="isAdmin" to="/products/new" class="mobile-nav-link" @click="showMobileMenu = false">➕ Add Product</router-link>
         </div>
       </transition>
     </div>
@@ -85,6 +85,7 @@ const showUserMenu = ref(false)
 const showMobileMenu = ref(false)
 
 const isAuthenticated = computed(() => store.getters['auth/isAuthenticated'])
+const isAdmin = computed(() => store.getters['auth/isAdmin'])
 const user = computed(() => store.getters['auth/user'])
 const userInitial = computed(() => user.value?.username?.charAt(0)?.toUpperCase() || 'U')
 

@@ -66,7 +66,7 @@
                   <span class="product-price">{{ formatPrice(price.salePrice || price.regularPrice) }}</span>
                   <span v-if="price.salePrice" class="old-price">{{ formatPrice(price.regularPrice) }}</span>
                 </div>
-                <button class="edit-price-btn" @click.stop="startEdit(price)" title="Edit price locally">✏️</button>
+                <button v-if="isAdmin" class="edit-price-btn" @click.stop="startEdit(price)" title="Edit price locally">✏️</button>
               </div>
             </div>
             <div class="d-flex gap-1 mt-1 flex-wrap">
@@ -93,6 +93,7 @@ const props = defineProps({
 
 const store = useStore()
 const stores = computed(() => store.getters['products/stores'])
+const isAdmin = computed(() => store.getters['auth/isAdmin'])
 const imgError = ref(false)
 
 const comparison = inject('comparison')

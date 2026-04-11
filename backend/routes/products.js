@@ -25,6 +25,14 @@ const authenticate = (req, res, next) => {
   }
 };
 
+// Middleware to check admin role
+const requireAdmin = (req, res, next) => {
+  if (req.user?.role !== 'admin') {
+    return res.status(403).json({ message: 'Admin access required' });
+  }
+  next();
+};
+
 // GET all products with pagination
 router.get('/', (req, res) => {
   const page = parseInt(req.query.page) || 1;
@@ -73,7 +81,7 @@ router.get('/:id', (req, res) => {
 });
 
 // POST create product (admin only)
-router.post('/', authenticate, (req, res) => {
+router.post('/', authenticate, requireAdmin, (req, res) => {
   const { name, category, brand, unit, image, prices } = req.body;
 
   const newProduct = {
@@ -98,7 +106,7 @@ router.post('/', authenticate, (req, res) => {
 });
 
 // PUT update product (admin only)
-router.put('/:id', authenticate, (req, res) => {
+router.put('/:id', authenticate, requireAdmin, (req, res) => {
   const index = products.findIndex(p => p.id === req.params.id);
   if (index === -1) {
     return res.status(404).json({ message: 'Product not found' });
@@ -120,7 +128,7 @@ router.put('/:id', authenticate, (req, res) => {
 });
 
 // DELETE product (admin only)
-router.delete('/:id', authenticate, (req, res) => {
+router.delete('/:id', authenticate, requireAdmin, (req, res) => {
   const index = products.findIndex(p => p.id === req.params.id);
   if (index === -1) {
     return res.status(404).json({ message: 'Product not found' });
