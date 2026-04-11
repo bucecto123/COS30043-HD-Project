@@ -66,7 +66,7 @@
               <span class="store-name">{{ getStoreName(price.storeId) }}</span>
               <div class="d-flex align-items-center gap-1">
                 <div class="text-end">
-                  <span class="product-price">{{ formatPrice(price.salePrice || price.regularPrice) }}</span>
+                  <span class="product-price" :class="{ 'on-sale': price.salePrice }">{{ formatPrice(price.salePrice || price.regularPrice) }}</span>
                   <span v-if="price.salePrice" class="old-price">{{ formatPrice(price.regularPrice) }}</span>
                 </div>
                 <button v-if="isAdmin" class="edit-price-btn" @click.stop="startEdit(price)" title="Edit price locally">✏️</button>
@@ -263,6 +263,22 @@ const isBestPrice = (price) => {
   background: rgba(194, 112, 62, 0.1);
   padding: 0.1rem 0.4rem;
   border-radius: 50px;
+}
+
+.product-price {
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--espresso);
+}
+.product-price.on-sale {
+  color: #d0341a;
+}
+.old-price {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--espresso-light);
+  text-decoration: line-through;
+  opacity: 0.7;
 }
 
 .edit-price-btn {

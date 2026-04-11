@@ -29,6 +29,7 @@ function applyOverrides(products, overrides) {
 
 const state = () => ({
   items: [],
+  localProducts: [],   // admin-created products, survive Supabase re-fetches
   localPriceOverrides: loadOverrides(),
   currentPage: 0,
   hasMore: true,
@@ -52,10 +53,10 @@ const getters = {
 
 const mutations = {
   SET_PRODUCTS(state, products) {
-    state.items = applyOverrides(products, state.localPriceOverrides)
+    state.items = [...state.localProducts, ...applyOverrides(products, state.localPriceOverrides)]
   },
   APPEND_PRODUCTS(state, products) {
-    state.items = [...state.items, ...applyOverrides(products, state.localPriceOverrides)]
+    state.items = [...state.localProducts, ...state.items.filter(p => !p._local), ...applyOverrides(products, state.localPriceOverrides)]
   },
   SET_LOCAL_PRICE(state, { productId, storeId, regularPrice, salePrice }) {
     if (!state.localPriceOverrides[productId]) state.localPriceOverrides[productId] = {}
@@ -68,7 +69,9 @@ const mutations = {
     }
   },
   ADD_PRODUCT(state, product) {
-    state.items.unshift(product)
+    const p = { ...product, _local: true }
+    state.localProducts.unshift(p)
+    state.items.unshift(p)
   },
   UPDATE_PRODUCT(state, updated) {
     const index = state.items.findIndex(p => p.id === updated.id)
@@ -78,6 +81,7 @@ const mutations = {
   },
   REMOVE_PRODUCT(state, productId) {
     state.items = state.items.filter(p => p.id !== productId)
+    state.localProducts = state.localProducts.filter(p => p.id !== productId)
   },
   SET_CURRENT_PAGE(state, page) {
     state.currentPage = page
